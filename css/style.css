@@ -1,0 +1,14 @@
+
+.background_reyna{
+    background-image: url(imgs\reyna-fundo.png);
+    background-size:cover;
+    
+}
+.header {
+    display: flex;
+}
+.navbar{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+}
