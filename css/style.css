@@ -61,7 +61,6 @@
     font-weight: bolder;
     font-size: 24px;
     color: black;
-    margin-bottom: 5%;
 }
 .texto2{
     color: #706D6D;
@@ -69,9 +68,11 @@
     line-height: 180%;
 }
 .bloco3{
+    display: flex;
     margin-top: 2%;
     margin-left: 2%;
     margin-bottom: 3%;
+    flex-direction: column;
 }
 .bloco4{
     background-image: url(../imgs/fundoviper.png);
