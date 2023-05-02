@@ -6,7 +6,7 @@
 }
 
 .background_reyna{
-    background-image: url(reyna-fundo.jpg);
+    background-image: url(../imgs/reyna-fundo.jpg);
     background-size:cover;
     height: 100vh;
     display: flex;
@@ -25,13 +25,12 @@
     list-style: none;
     display: flex;
     justify-content: center;
-}
-.links{
-    margin-left: 10px;
-
+    gap: 10%;
+    white-space: nowrap;
+    
 }
 .home {
-    border-bottom: 10px #FF4655;
+    border-bottom: 2px solid #FF4655;
 }
 .container{
     width: 45%;
@@ -41,11 +40,11 @@
 }
 .titulo{
     font-weight: 800;
-    font-size: 35px;
+    font-size: 2.2vmax;
     color: #FF4655;
 }
 .texto{
-    font-size: 20px;
+    font-size: 1.2vmax;
     color: white;
     line-height: 170%;
 }
@@ -75,20 +74,25 @@
     margin-bottom: 3%;
 }
 .bloco4{
-    background-image: url(fundoviper.png);
+    background-image: url(../imgs/fundoviper.png);
     height: 86vh;
     display: flex;
     align-items: center;
 }
 .cards{
+    display: flex;
     color: white;
     width: 20%;
     margin-left: 10%;
     line-height: 170%;
+    flex-direction: column;
 }
 .qtd_fps{
+    display: flex;
     font-weight: bolder;
     font-size: 30px;
+    justify-content: center;
+    width: 100%;
 }
 .footer{
     height: 15vh;
