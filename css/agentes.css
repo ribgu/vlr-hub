@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat';
+
+}
+.background{
+    background-image: url(../imgs/fundo-agentes.png);
+    background-size: cover;
+    display: flex;
+    height: 100.1vh;
+    flex-direction: column;
+}
+.header {
+    display: flex;
+    justify-content: center;
+    font-size: large;
+    color: white;
+    height: 8%;
+    align-items: center;
+}
+.navbar{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 10%;
+    white-space: nowrap;
+    font-weight: 400;
+    
+}
+.agentes {
+    border-bottom: 2px solid #C1E7FE;
+}
+.container{
+    width: 40%;
+    height: 30%;
+    margin-top: 20%;
+    margin-left: 3%;
+}
+.titulo{
+    font-weight: 800;
+    font-size: 2.2vmax;
+    color: #C1E7FE;
+}
+.texto{
+    font-size: 1.2vmax;
+    color: white;
+    line-height: 200%;
+}
+.bloco2{
+    display: flex;
+    justify-items: row;
+}
+.caixa_texto{
+    width: 40%;
+    margin-left: 3%;
+    margin-top: 3%;
+}
+.classes{
+    margin-top: 10%;
+}
+.funcoes{
+    display: flex;
+    flex-direction: column;
+    height: 500vh;
+}
+.caixa2{
+    display: flex;
+    margin-top: 10%;
+}
+.duelista{
+    width: 190px;
+    height: 190px;
+}
+.icons{
+    display: flex;
+    flex-direction: column;
+    margin-right: 20%;
+}
+.fileira1{
+    display: flex;
+}
+.fileira2{
+    display: flex;
+}
+.icone_agente{
+    margin-right: 30%;
+}

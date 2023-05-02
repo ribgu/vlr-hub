@@ -27,6 +27,7 @@
     justify-content: center;
     gap: 10%;
     white-space: nowrap;
+    font-weight: 400;
     
 }
 .home {
