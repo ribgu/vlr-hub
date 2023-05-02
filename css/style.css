@@ -9,6 +9,8 @@
     background-image: url(reyna-fundo.jpg);
     background-size:cover;
     height: 100vh;
+    display: flex;
+    flex-direction: column;
     
 }
 .header {
@@ -16,9 +18,89 @@
     justify-content: center;
     font-size: large;
     color: white;
+    height: 8%;
+    align-items: center;
 }
 .navbar{
     list-style: none;
     display: flex;
     justify-content: center;
+}
+.links{
+    margin-left: 10px;
+
+}
+.home {
+    border-bottom: 10px #FF4655;
+}
+.container{
+    width: 45%;
+    height: 30%;
+    margin-top: 23%;
+    margin-left: 3%;
+}
+.titulo{
+    font-weight: 800;
+    font-size: 35px;
+    color: #FF4655;
+}
+.texto{
+    font-size: 20px;
+    color: white;
+    line-height: 170%;
+}
+.bloco2{
+    display: flex;
+    justify-items: row;
+}
+.caixa_texto{
+    width: 40%;
+    margin-left: 3%;
+    margin-top: 3%;
+}
+.titulo2{
+    font-weight: bolder;
+    font-size: 24px;
+    color: black;
+    margin-bottom: 5%;
+}
+.texto2{
+    color: #706D6D;
+    font-size: 17px;
+    line-height: 180%;
+}
+.bloco3{
+    margin-top: 2%;
+    margin-left: 2%;
+    margin-bottom: 3%;
+}
+.bloco4{
+    background-image: url(fundoviper.png);
+    height: 86vh;
+    display: flex;
+    align-items: center;
+}
+.cards{
+    color: white;
+    width: 20%;
+    margin-left: 10%;
+    line-height: 170%;
+}
+.qtd_fps{
+    font-weight: bolder;
+    font-size: 30px;
+}
+.footer{
+    height: 15vh;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.copy{
+    font-weight: bold;
+    color: white;
+}
+.footer img{
+    margin-right: 3%;
 }
