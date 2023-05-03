@@ -51,13 +51,19 @@
     display: flex;
     justify-items: row;
 }
+.titulo_agentes{
+    font-weight: 800;
+    font-size: 2.2vmax;
+    color: black;
+    
+}
 .caixa_texto{
     width: 40%;
     margin-left: 3%;
     margin-top: 3%;
 }
 .classes{
-    margin-top: 10%;
+    
 }
 .funcoes{
     display: flex;
@@ -66,23 +72,51 @@
 }
 .caixa2{
     display: flex;
-    margin-top: 10%;
+    margin-top: 5%;
 }
 .duelista{
-    width: 190px;
-    height: 190px;
+    width: 170px;
+    height: 170px;
+    margin-top: 2%;
+    margin-left: 2%;
 }
 .icons{
     display: flex;
     flex-direction: column;
     margin-right: 20%;
+    margin-top: 1%;
 }
 .fileira1{
     display: flex;
+    margin-bottom: 2%;
 }
 .fileira2{
     display: flex;
 }
 .icone_agente{
     margin-right: 30%;
+}
+.texto_agentes{
+    color: #706D6D;
+}
+.informacoes_agente{
+    width: 30%;
+    line-height: 180%;
+    margin-left: 8%;
+    margin-right: 10%;
+}
+.caixa3{
+    display: flex;
+    margin-top: 5%;
+    flex-direction: row-reverse;
+}
+.icons2{
+    display: flex;
+    flex-direction: column;
+    margin-right: 10%;
+}
+.iniciador{
+    width: 170px;
+    height: 170px;
+    margin-right: 2%;
 }
