@@ -1,9 +1,11 @@
+/* configurações gerais da página */
 * {
     margin: 0;
     padding: 0;
     font-family: 'Montserrat';
 
 }
+/* colocando a imagem de fundo na div */
 .background{
     background-image: url(../imgs/fundo-agentes.png);
     background-size: cover;
@@ -11,6 +13,7 @@
     height: 100.1vh;
     flex-direction: column;
 }
+/* header e navbar */
 .header {
     display: flex;
     justify-content: center;
@@ -28,7 +31,7 @@
     font-weight: 400;
     
 }
-.agentes {
+.guia_agentes {
     border-bottom: 2px solid #C1E7FE;
 }
 .container{
@@ -37,12 +40,12 @@
     margin-top: 20%;
     margin-left: 3%;
 }
-.titulo{
+.titulo_introducao{
     font-weight: 800;
     font-size: 2.2vmax;
     color: #C1E7FE;
 }
-.texto{
+.texto_introducao{
     font-size: 1.2vmax;
     color: white;
     line-height: 200%;
@@ -62,61 +65,109 @@
     margin-left: 3%;
     margin-top: 3%;
 }
-.classes{
-    
-}
-.funcoes{
+.explicacao_funcoes{
     display: flex;
     flex-direction: column;
     height: 500vh;
 }
-.caixa2{
+.caixa_duelistas{
     display: flex;
     margin-top: 5%;
+    width: 100%;
+    height: 8%;
 }
-.duelista{
+.icone_classe_duelista{
     width: 170px;
     height: 170px;
     margin-top: 2%;
     margin-left: 2%;
 }
-.icons{
+.icons_duelistas{
     display: flex;
     flex-direction: column;
-    margin-right: 20%;
+    width: 35vw;
+    height: 35vh;
     margin-top: 1%;
+    box-sizing: border-box;
 }
 .fileira1{
     display: flex;
     margin-bottom: 2%;
+    width: 20vw;
+    height: 25vh;
 }
 .fileira2{
     display: flex;
+    width: 20vw;
+    height: 25vh;
 }
 .icone_agente{
     margin-right: 30%;
+    height: 100px;
+    transition: 0.3s ease;
+    cursor: pointer;
+
 }
+.icone_agente:hover {
+    transform: scale(1.2);
+  }
+
 .texto_agentes{
     color: #706D6D;
 }
-.informacoes_agente{
+.informacoes_duelistas{
     width: 30%;
     line-height: 180%;
     margin-left: 8%;
     margin-right: 10%;
 }
-.caixa3{
+.informacoes_iniciadores{
+    width: 30%;
+    line-height: 180%;
+    margin-left: 8%;
+    margin-right: 10%;
+}
+.caixa_iniciadores{
     display: flex;
     margin-top: 5%;
     flex-direction: row-reverse;
+    width: 98.7vw;
+    height: 45vh;
+    justify-content: center;
+    align-items: center;
 }
-.icons2{
+.icons_iniciadores{
     display: flex;
     flex-direction: column;
-    margin-right: 10%;
+    width: 35vw;
+    height: 35vh;
+    margin-left: 4%;
 }
-.iniciador{
+.icone_classe_iniciador{
     width: 170px;
     height: 170px;
     margin-right: 2%;
+}
+
+
+.caixa_controladores{
+    display: flex;
+    margin-top: 5%;
+    width: 100%;
+    height: 8%;
+}
+
+.icons_controladores{
+    display: flex;
+    flex-direction: column;
+    width: 35vw;
+    height: 35vh;
+    margin-top: 1%;
+    box-sizing: border-box;
+}
+.informacoes_controladores{
+    width: 100vw;
+    line-height: 180%;
+    margin-left: 8%;
+    margin-right: 10%;
 }
