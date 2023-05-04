@@ -68,13 +68,13 @@
 .explicacao_funcoes{
     display: flex;
     flex-direction: column;
-    height: 500vh;
+    height: 200vh;
 }
 .caixa_duelistas{
     display: flex;
     margin-top: 5%;
-    width: 100%;
-    height: 8%;
+    justify-content: center;
+    align-items: center;
 }
 .icone_classe_duelista{
     width: 170px;
@@ -120,6 +120,8 @@
     line-height: 180%;
     margin-left: 8%;
     margin-right: 10%;
+
+
 }
 .informacoes_iniciadores{
     width: 30%;
@@ -148,15 +150,14 @@
     height: 170px;
     margin-right: 2%;
 }
-
-
 .caixa_controladores{
     display: flex;
+    width: 98.7vw;
+    height: 45vh;
     margin-top: 5%;
-    width: 100%;
-    height: 8%;
+    justify-content: center;
+    align-items: center;
 }
-
 .icons_controladores{
     display: flex;
     flex-direction: column;
@@ -166,8 +167,64 @@
     box-sizing: border-box;
 }
 .informacoes_controladores{
-    width: 100vw;
+    width: 30%;
     line-height: 180%;
     margin-left: 8%;
     margin-right: 10%;
+
+
+}
+.fileira_control_2{
+    display: flex;
+    width: 20vw;
+    height: 20vh;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 30%;
+}
+.informacoes_sentinelas{
+    width: 30%;
+    line-height: 180%;
+    margin-left: 8%;
+    margin-right: 10%;
+}
+.caixa_sentinelas{
+    display: flex;
+    margin-top: 5%;
+    flex-direction: row-reverse;
+    width: 98.7vw;
+    height: 45vh;
+    justify-content: center;
+    align-items: center;
+}
+.icons_sentinelas{
+    display: flex;
+    flex-direction: column;
+    width: 35vw;
+    height: 35vh;
+    margin-left: 4%;
+}
+.icone_classe_sentinela{
+    width: 170px;
+    height: 170px;
+    margin-right: 2%;
+}
+.fileira_sent_2{
+    width: 22%;
+    margin-left: 38%;
+}
+.footer{
+    height: 15vh;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.copy{
+    font-weight: bold;
+    color: white;
+}
+.footer img{
+    margin-right: 3%;
 }
