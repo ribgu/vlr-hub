@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat';
+
+}
+
+.background_duelistas{
+    background-image: url(../imgs/duelistas/background_duel.png);
+    background-size:cover;
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.header {
+    display: flex;
+    justify-content: center;
+    font-size: large;
+    color: white;
+    height: 8%;
+    align-items: center;
+    width: 100%;
+}
+#volta{
+    position: absolute;
+    margin-left: 1%;
+    cursor: pointer;    
+    color: white;
+    margin-top: 0.5%;
+    font-weight: 500;
+}
+.navbar{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 10%;
+    white-space: nowrap;
+    font-weight: 800;
+    
+}
+.caixa_texto{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 25vw;
+    color: white;
+    margin-top: 29vh;
+    margin-left: 45vw;
+    line-height: 170%;
+
+}
+.biografia{
+    font-weight: 800;
+    font-size: 2vmax;
+    width: 100%;
+}
+.texto-bio{
+    font-size:1.6vmax ;
+}
+.big_neon{
+    width: 450px;
+    height: 690px;
+    position: absolute;
+    margin-left: -;
+}

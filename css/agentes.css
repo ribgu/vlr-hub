@@ -32,7 +32,15 @@
     
 }
 .guia_agentes {
-    border-bottom: 2px solid #C1E7FE;
+    border-bottom: 2px solid #FF4655;
+    font-weight: 800;
+    text-decoration: none;
+    color: white;
+}
+.links{
+    font-weight: 800;
+    text-decoration: none;
+    color: white;
 }
 .container{
     width: 40%;
@@ -203,16 +211,39 @@
     flex-direction: column;
     width: 35vw;
     height: 35vh;
-    margin-left: 4%;
+    margin-left: 6%;
 }
 .icone_classe_sentinela{
     width: 170px;
     height: 170px;
     margin-right: 2%;
 }
+.icone_agente_sent{
+    margin-right: 20%;
+    height: 100px;
+    transition: 0.3s ease;
+    cursor: pointer;
+
+}
+.icone_agente_sent:hover {
+    transform: scale(1.2);
+  }
+
 .fileira_sent_2{
-    width: 22%;
-    margin-left: 38%;
+    width: 35vw;
+    height: 20vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.fileira_sent_1{
+    width: 35vw;
+    height: 20vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 .footer{
     height: 15vh;
