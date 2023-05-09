@@ -36,12 +36,20 @@
     font-weight: 800;
     text-decoration: none;
     color: white;
+    transition: 0.3s ease;
+}
+.guia_agentes:hover{
+    transform: scale(1.1);
 }
 .links{
     font-weight: 800;
     text-decoration: none;
     color: white;
+    transition: 0.3s ease;
 }
+.links:hover {
+    transform: scale(1.1);
+  }
 .container{
     width: 40%;
     height: 30%;
@@ -142,9 +150,10 @@
     margin-top: 5%;
     flex-direction: row-reverse;
     width: 98.7vw;
-    height: 45vh;
+    height: 100vh;
     justify-content: center;
     align-items: center;
+    background-color: #C0C0C0;
 }
 .icons_iniciadores{
     display: flex;
@@ -202,9 +211,10 @@
     margin-top: 5%;
     flex-direction: row-reverse;
     width: 98.7vw;
-    height: 45vh;
+    height: 100vh;
     justify-content: center;
     align-items: center;
+    background-color: #C0C0C0;
 }
 .icons_sentinelas{
     display: flex;

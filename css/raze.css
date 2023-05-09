@@ -41,14 +41,14 @@
 
 }
 .biografia{
-    font-weight: 1000;
+    font-weight: 800;
     font-size: 2vmax;
     width: 100%;
 }
 .texto-bio{
     font-size:1.6vmax ;
 }
-.big_neon{
+.big_raze{
     width: 450px;
     height: 690px;
     position: absolute;

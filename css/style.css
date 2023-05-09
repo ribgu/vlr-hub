@@ -6,12 +6,12 @@
 }
 
 .background_reyna{
-    background-image: url(../imgs/reyna-fundo.jpg);
+    background-image: url(../imgs/reyna_fundo.png);
     background-size:cover;
     height: 100vh;
     display: flex;
     flex-direction: column;
-    
+    background-position: 65%;
 }
 .header {
     display: flex;
@@ -21,11 +21,24 @@
     height: 8%;
     align-items: center;
 }
+.login{
+    margin-left: 80%;
+    position: absolute;
+    background-color:#FF4655;
+    color: white;
+    box-shadow: 0 0 0 0 rgba(0,0,0,0),0 0 0 0 rgba(0,0,0,0) !important;
+    border-bottom: 0px;
+    border:none!important;
+    width: 10vw;
+    height: 4vh;
+    font-size: large;
+    border-radius: 6%;
+}
 .navbar{
     list-style: none;
     display: flex;
     justify-content: center;
-    gap: 10%;
+    gap: 8%;
     white-space: nowrap;
     font-weight: 400;
     
@@ -59,7 +72,7 @@
 }
 .titulo{
     font-weight: 800;
-    font-size: 2.2vmax;
+    font-size: 3vmax;
     color: #FF4655;
 }
 .texto{

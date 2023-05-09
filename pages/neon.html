@@ -16,21 +16,22 @@
     />
 </head>
 <body>
-  <span class="material-symbols-outlined" id="volta">arrow_back_ios</span>
+  <span class="material-symbols-outlined" id="volta" onclick="voltar_agentes()">arrow_back_ios</span>
     <div class="background_duelistas">
       
         <div class="header">
           <div class="navbar">
-            <a class="links"> HOME </a>
-            <a class="links_agentes"> AGENTES </a>
-            <a class="links"> MAPAS </a>
-            <a class="links"> PRO-TIPS </a>
+            <a class="links">  </a>
+            <a class="links_agentes">  </a>
+            <a class="links">  </a>
+            <a class="links">  </a>
           </div>
         </div>
         <img src="../imgs/duelistas/big_neon.png" class="big_neon">
         <div class="container">
           <div class="caixa_texto">
-            <span class="nome_agente"></span>
+            <span class="nome_agente">NEON</span>
+            <img src="../imgs/duelistas/duel_pqn.png"class="duelista">
             <span class="biografia">// BIOGRAFIA</span>
             <p class="texto-bio">
               Neon, nossa Agente filipina, avança em velocidades incríveis, descarregando surtos de radiância bioelétrica tão rapidamente quanto seu corpo consegue gerá-los. Ela corre à frente para pegar os inimigos de surpresa, abatendo-os mais rápido do que um raio.
@@ -40,14 +41,26 @@
       </div>
       <div class="skills">
         <div class="skill_q">
-          <img src="../imgs/duelistas/ricochete eletrico 1.png">
-          Arremessa um raio de energia que ricocheteia uma vez. Ao atingir cada superfície, o raio eletrifica o chão abaixo dele com uma explosão.
+          <img src="../imgs/duelistas/ricochete eletrico 1.png" class="ricochete">
+          <span class="texto_skill"> Arremessa um raio de energia que ricocheteia uma vez. Ao atingir cada superfície, o raio eletrifica o chão abaixo dele com uma explosão.</span>
         </div>
         <div class="skill_x">
-        <img src="../imgs/duelistas/sobrecarga 1.png">
+        <img src="../imgs/duelistas/sobrecarga 1.png" class="sobrecarga">
+        <span class="texto_skill">Neon libera todo o seu poder e velocidade por um curto período. Dispare para canalizar isso em um raio elétrico mortal com alta precisão de movimento. A duração é redefinida com cada abate.</span>
         </div>
-        <div class="skill_e"></div>
-        <div class="skill_c"></div>
+        <div class="skill_e">
+          <img src="../imgs/duelistas/equipamento voltaico 1.png" class="voltaico">
+          <span class="texto_skill">Canaliza o poder de Neon para receber velocidade aumentada. Ao atingir a carga máxima, use o disparo alternativo para acionar um deslize elétrico. O carregamento é redefinido a cada dois abates.</span>
+        </div>
+        <div class="skill_c">
+          <img src="../imgs/duelistas/via expressa 1.png" class="via">
+          <span class="texto_skill"> Dispare duas linhas de energia no chão à frente. As linhas se estendem por uma curta distância ou até atingirem uma superfície. Elas se tornam paredes de eletricidade estática que bloqueiam a visão e causam dano aos inimigos que as atravessarem.</span>
+        </div>
       </div>
 </body>
 </html>
+<script>
+  function voltar_agentes(){
+    window.location.href = "agentes.html";
+  }
+</script>
