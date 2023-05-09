@@ -30,6 +30,7 @@
     color: white;
     margin-top: 0.5%;
     font-weight: 500;
+    font-size: 3vmax;
 }
 .navbar{
     list-style: none;
@@ -63,5 +64,52 @@
     width: 450px;
     height: 690px;
     position: absolute;
-    margin-left: -;
+    margin-right: 68%;
+    margin-top: 4%;
 }
+.skills{
+    width: 50vw;
+    height: 60vh;
+    background-color: red;
+    margin-left: 42vw;
+    margin-top: 2%;
+    display: flex;
+    flex-direction: column;
+}
+.skill_q{
+    display: flex;
+    width: 80%;
+    height: 24%;
+    background-color: purple;
+    margin-left: 10%;
+    margin-top: 5%;
+    align-items: center;
+}
+.skill_x{
+    display: flex;
+    width: 80%;
+    height: 24%;
+    background-color: purple;
+    margin-left: 10%;
+    margin-top: 5%;
+    align-items: center;
+}
+.skill_e{
+    display: flex;
+    width: 80%;
+    height: 24%;
+    background-color: purple;
+    margin-left: 10%;
+    margin-top: 5%;
+    align-items: center;
+}
+.skill_c{
+    display: flex;
+    width: 80%;
+    height: 24%;
+    background-color: purple;
+    margin-left: 10%;
+    margin-top: 5%;
+    align-items: center;
+}
+
