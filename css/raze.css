@@ -25,6 +25,19 @@
     font-size: 3vmax;
     transition: 0.3s ease;
 }
+.nome_agente{
+    font-weight: 900;
+    font-size: 10vmax;
+    font-family: 'Montserrat', sans-serif;
+
+}
+.texto_img{
+    display: flex;
+    height: 20vh;
+    align-items: center;
+    margin-top: 5%;
+
+}
 
 #volta:hover{
     transform: scale(1.2);
@@ -35,13 +48,13 @@
     align-items: center;
     width: 25vw;
     color: white;
-    margin-top: 29vh;
+    margin-top: 15vh;
     margin-left: 45vw;
     line-height: 170%;
 
 }
 .biografia{
-    font-weight: 800;
+    font-weight: 1000;
     font-size: 2vmax;
     width: 100%;
 }
