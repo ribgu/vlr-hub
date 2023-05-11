@@ -6,7 +6,7 @@
 }
 
 .background_iniciadores{
-    background-image: url(../imgs/iniciadores/fundo_iniciadores.png);
+    background-image: url(../imgs/controladores/fundo_controladores.png);
     background-size:cover;
     height: 85vh;
     display: flex;
@@ -27,7 +27,7 @@
 }
 .nome_agente{
     font-weight: 900;
-    font-size: 10vmax;
+    font-size: 7vmax;
     font-family: 'Montserrat', sans-serif;
     margin-bottom: 18vh;
 
@@ -70,7 +70,7 @@
     width: 450px;
     height: 690px;
     position: absolute;
-    margin-right: 70%;
+    margin-right: 65%;
     margin-top: 4%;
 }
 .skills{
@@ -117,5 +117,3 @@
     color: #706D6D;
     margin-left: 8%;
 }
-
-
