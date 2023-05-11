@@ -1,0 +1,119 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat';
+
+}
+
+.background_iniciadores{
+  background-image: url(../imgs/sentinelas/fundo_sentinelas.png);
+  background-size:cover;
+  height: 85vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+#volta{
+  position: absolute;
+  margin-left: 2%;
+  cursor: pointer;    
+  color: white;
+  margin-top: 1%;
+  font-weight: 500;
+  font-size: 3vmax;
+  transition: 0.3s ease;
+}
+.nome_agente{
+  font-weight: 900;
+  font-size: 9vmax;
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 18vh;
+
+}
+.texto_img{
+  display: flex;
+  height: 20vh;
+  align-items: center;
+  margin-top: 5%;
+
+}
+.iniciador{
+  margin-bottom: 18vh;
+}
+
+#volta:hover{
+  transform: scale(1.2);
+}
+.caixa_texto{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 25vw;
+  color: white;
+  margin-top: 15vh;
+  margin-left: 45vw;
+  line-height: 170%;
+
+}
+.biografia{
+  font-weight: 1000;
+  font-size: 2vmax;
+  width: 100%;
+}
+.texto-bio{
+  font-size:1.3vmax ;
+  font-weight: 500;
+}
+.agente{
+  width: 450px;
+  height: 690px;
+  position: absolute;
+  margin-right: 65%;
+  margin-top: 4%;
+}
+.skills{
+  width: 50vw;
+  height: 60vh;
+  margin-left: 42vw;
+  margin-bottom: 1%;
+  display: flex;
+  flex-direction: column;
+}
+.skill_q{
+  display: flex;
+  width: 90%;
+  height: 24%;
+  margin-left: 10%;
+  margin-top: 5%;
+  align-items: center;
+}
+.skill_x{
+  display: flex;
+  width: 90%;
+  height: 24%;
+  margin-left: 10%;
+  margin-top: 5%;
+  align-items: center;
+}
+.skill_e{
+  display: flex;
+  width: 90%;
+  height: 24%;
+  margin-left: 10%;
+  margin-top: 5%;
+  align-items: center;
+}
+.skill_c{
+  display: flex;
+  width: 90%;
+  height: 24%;
+  margin-left: 10%;
+  margin-top: 5%;
+  align-items: center;
+}
+.texto_skill{
+  color: #706D6D;
+  margin-left: 8%;
+}

@@ -64,11 +64,11 @@
       window.location.href = "sage.html"
      }
      function abrir_kj(){
-      window.location.href = "kj.html"
+      window.location.href = "killjoy.html"
      }
      function abrir_cypher(){
       window.location.href = "cypher.html"
      }
      function abrir_chamber(){
-      window.location.href = "cypher.html"
+      window.location.href = "chamber.html"
      }

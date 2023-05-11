@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VLR - HUB | AGENTES</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/chamber.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <span
+      class="material-symbols-outlined"
+      id="volta"
+      onclick="voltar_agentes()"
+      >arrow_back_ios</span
+    >
+    <div class="background_iniciadores">
+      <div class="header">
+        <div class="navbar">
+          <a class="links"> </a>
+          <a class="links_agentes"> </a>
+          <a class="links"> </a>
+          <a class="links"> </a>
+        </div>
+      </div>
+      <img src="../imgs/sentinelas/chamber.png" class="agente" />
+      <div class="container">
+        <div class="caixa_texto">
+          <div class="texto_img">
+          <span class="nome_agente">CHAMBER</span>
+          <img src="../imgs/sentinelas/sent.png" class="iniciador" />
+        </div>
+          <span class="biografia">// BIOGRAFIA</span>
+          <p class="texto-bio">
+            Bem vestido e armado até os dentes, o criador de armas francês Chamber coloca os inimigos para correr com uma precisão mortal. Use e abuse do arsenal personalizado dele para segurar posições e abater inimigos de longe, criando a defesa perfeita para qualquer plano.
+          </p>
+        </div>
+      </div>
+    </div>
+    
+    
+    <div class="skills">
+      <div class="skill_q">
+        <img
+          src="../imgs/sentinelas/q_chamber.png"
+          class="ricochete"
+        />
+        <span class="texto_skill">
+
+            Ative para equipar uma pistola pesada. Use o Disparo Alternativo com a pistola equipada para mirar.
+</span
+        >
+      </div>
+      <div class="skill_x">
+        <img src="../imgs/sentinelas/x_chamber.png" class="sobrecarga" />
+        <span class="texto_skill"
+          >Ative para invocar um poderoso fuzil de precisão personalizado que abate um inimigo com qualquer acerto. Abater um inimigo cria um campo duradouro que reduz a velocidade dos jogadores dentro dele.</span
+        >
+      </div>
+      <div class="skill_e">
+        <img
+          src="../imgs/sentinelas/e_chamber.png"
+          class="voltaico"
+        />
+        <span class="texto_skill"
+          >Posicione uma âncora de teleporte. Enquanto estiver no chão e dentro do alcance da âncora, Reative para teleportar rapidamente até a âncora. A âncora pode ser recuperada para ser Reposicionada.</span
+        >
+      </div>
+      <div class="skill_c">
+        <img src="../imgs/sentinelas/c_chamber.png " class="via" />
+        <span class="texto_skill">
+            Posicione uma armadilha que busca por inimigos. Quando um inimigo visível entrar no alcance, a armadilha inicia uma contagem regressiva e desestabiliza o terreno ao redor, criando um campo duradouro que reduz a velocidade dos jogadores. A armadilha pode ser recuperada para ser Reposicionada.</span
+        >
+      </div>
+    </div>
+
+  </body>
+</html>
+<script>
+  function voltar_agentes() {
+    window.location.href = "agentes.html";
+  }
+
+
+</script>
