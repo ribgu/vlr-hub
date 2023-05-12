@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>VLR - HUB | Login</title>
+    <link rel="stylesheet" href="..\css\cadastro.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet"/>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,400;0,500;0,600;0,700;0,800;0,900;1,500;1,600;1,700;1,800;1,900&display=swap');
+      </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+  <body>
+    <div class="container">
+      <div class="fundo_astra"></div>
+      <div class="bloco_forms">
+        <span class="material-symbols-outlined" id="voltar">arrow_back_ios</span>
+        <div class="titulo">
+          <p class="texto_titulo">BEM VINDO AO VLR-HUB</p>
+        </div class="bloco_inputs">
+        
+        <div class="inputs">
+        <span class="texto_bemvindo">Cadastre- se e alcance a vitória com o  <span class="valorant"> VLR - HUB </span></span>
+        <input type="email" id="inp_nome" class="input" placeholder="NOME">
+        <input type="password" id="inp_email" class="input2" placeholder="EMAIL">
+        <input type="email" id="inp_nickname" class="input2" placeholder="NICKNAME">
+        <input type="password" id="inp_senha" class="input2" placeholder="SENHA">
+        <input type="password" id="inp_confirm_senha" class="input2" placeholder="CONFIRMAR SENHA">
+        </div>
+        <span id="mensagem_erro"></span>
+        <button class="botao_cadastrar"><span class="material-symbols-outlined" id="arrow_login">arrow_right_alt</span></button>
+        <span class="redirecionando_login">Ja tem uma conta? Faça seu <span class="caps"> LOGIN </span> </span>
+      </div>
+    </div>
+  </body>
+</html>
+<script>
+  function cadastrar() {
+      aguardar();
+
+      //Recupere o valor da nova input pelo nome do id
+      // Agora vá para o método fetch logo abaixo
+      var nomeVar = nome_input.value;
+      var emailVar = email_input.value;
+      var senhaVar = senha_input.value;
+      var confirmacaoSenhaVar = confirmacao_senha_input.value;
+
+      //Validações de usúario
+      var emailValidado = (emailVar.indexOf("@") != -1) && (emailVar.indexOf(".") != -1);
+      var confirmacaoSenhaValidada = senhaVar == confirmacaoSenhaVar;
+      var senhaForteValidada = senhaVar.lenght >= 8 &&
+      (senhaVar.indexOf("!") != -1 ||
+      senhaVar.indexOf("@") != -1 ||
+      senhaVar.indexOf("#") != -1 ||
+      senhaVar.indexOf("$") != -1 ||
+      senhaVar.indexOf("%") != -1 ||
+      senhaVar.indexOf("&") != -1 ||
+      senhaVar.indexOf("|") != 1 ||
+      senhaVar.indexOf("*") != 1 ||
+      senhaVar.indexOf("_") != 1);
+
+      if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
+          mensagem_erro.innerHTML = "(TODOS OS CAMPOS ESTÃO EM BRANCO)";
+          return false;
+      } else if(emailValidado){
+          mensagem_erro.innerHTML = "(EMAIL INVÁLIDO)";
+      }else if(confirmacaoSenhaValidada){
+          mensagem_erro.innerHTML = "(A SENHA PRECISA SER IGUAL NOS 2 CAMPOS)";
+      }else if(senhaForteValidada){
+          mensagem_erro.innerHTML = "(A SENHA PRECISA TER 8 CARACTERES E NO MÍNIMO 1 ESPECIAL)";
+      }
+      else {
+          setInterval(sumirMensagem, 5000)
+      }
+
+      // Enviando o valor da nova input
+      fetch("/usuarios/cadastrar", {
+          method: "POST",
+          headers: {
+              "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+              // crie um atributo que recebe o valor recuperado aqui
+              // Agora vá para o arquivo routes/usuario.js
+              nomeServer: nomeVar,
+              emailServer: emailVar,
+              senhaServer: senhaVar,
+              nickServer: nickVar,
+          })
+      }).then(function (resposta) {
+
+          console.log("resposta: ", resposta);
+
+          if (resposta.ok) {
+              mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+              setTimeout(() => {
+                  window.location = "login.html";
+              }, "2000")
+
+              limparFormulario();
+          } else {
+              throw ("Houve um erro ao tentar realizar o cadastro!");
+          }
+      }).catch(function (resposta) {
+          console.log(`#ERRO: ${resposta}`);
+  
+      });
+
+      return false;
+  }
+
+</script>

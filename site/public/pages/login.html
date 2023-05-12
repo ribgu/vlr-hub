@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>VLR - HUB | Login</title>
+    <link rel="stylesheet" href="..\css\login.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet"/>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,400;0,500;0,600;0,700;0,800;0,900;1,500;1,600;1,700;1,800;1,900&display=swap');
+      </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+  <body>
+    <div class="container">
+      <div class="fundo_astra"></div>
+      <div class="bloco_forms">
+        <span class="material-symbols-outlined" id="voltar">arrow_back_ios</span>
+        <div class="titulo">
+          <p class="texto_titulo">BEM VINDO AO VLR-HUB</p>
+        </div class="bloco_inputs">
+        
+        <div class="inputs">
+        <span class="texto_bemvindo">Faça login na sua conta e aproveite o melhor do <span class="valorant"> VALORANT </span></span>
+        <input type="email" id="inp_email" class="input" placeholder="EMAIL">
+        <input type="password" id="inp_senha" class="input2" placeholder="SENHA">
+        </div>
+        <span id="alerta"></span>
+        <button class="logar"><span class="material-symbols-outlined" id="arrow_login">arrow_right_alt</span></button>
+        <span class="cadastrar">Não tem conta ainda? <span class="caps"> CADASTRE - SE </span> </span>
+      </div>
+    </div>
+  </body>
+</html>
+<script>
+
+
+    function entrar() {
+        aguardar();
+
+        var emailVar = inp_email.value;
+        var senhaVar = inp_senha.value;
+
+        if (emailVar == "" || senhaVar == "") {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+            finalizarAguardar();
+            return false;
+        }
+        else {
+            setInterval(sumirMensagem, 5000)
+        }
+
+        console.log("FORM LOGIN: ", emailVar);
+        console.log("FORM SENHA: ", senhaVar);
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.id;
+
+                    setTimeout(function () {
+                        window.location = "index.html";
+                    }, 1000); // apenas para exibir o loading
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    finalizarAguardar(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+
+</script>
