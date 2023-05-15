@@ -7,7 +7,7 @@
     <title>VLR - HUB | Login</title>
     <link rel="stylesheet" href="..\css\cadastro.css"/>
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"/>
-    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="'https://fonts.googleapis.com"/>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet"/>
     <style>
@@ -27,14 +27,14 @@
         
         <div class="inputs">
         <span class="texto_bemvindo">Cadastre- se e alcance a vitória com o  <span class="valorant"> VLR - HUB </span></span>
-        <input type="email" id="inp_nome" class="input" placeholder="NOME">
-        <input type="password" id="inp_email" class="input2" placeholder="EMAIL">
-        <input type="email" id="inp_nickname" class="input2" placeholder="NICKNAME">
+        <input type="text" id="inp_nome" class="input" placeholder="NOME">
+        <input type="email" id="inp_email" class="input2" placeholder="EMAIL">
+        <input type="text" id="inp_nickname" class="input2" placeholder="NICKNAME">
         <input type="password" id="inp_senha" class="input2" placeholder="SENHA">
         <input type="password" id="inp_confirm_senha" class="input2" placeholder="CONFIRMAR SENHA">
         </div>
         <span id="mensagem_erro"></span>
-        <button class="botao_cadastrar"><span class="material-symbols-outlined" id="arrow_login">arrow_right_alt</span></button>
+        <button  onclick="cadastrar()" class="botao_cadastrar"><span class="material-symbols-outlined" id="arrow_login">arrow_right_alt</span></button>
         <span class="redirecionando_login">Ja tem uma conta? Faça seu <span class="caps"> LOGIN </span> </span>
       </div>
     </div>
