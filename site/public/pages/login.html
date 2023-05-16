@@ -31,8 +31,8 @@
         <input type="password" id="inp_senha" class="input2" placeholder="SENHA">
         </div>
         <span id="alerta"></span>
-        <button class="logar"><span class="material-symbols-outlined" id="arrow_login">arrow_right_alt</span></button>
-        <span class="cadastrar">Não tem conta ainda? <span class="caps"> CADASTRE - SE </span> </span>
+        <button class="logar"><span class="material-symbols-outlined" id="arrow_login" onclick="voltar_index()">arrow_right_alt</span></button>
+        <span class="cadastrar">Não tem conta ainda? <span class="caps" onclick="abrir_cadastro()"> CADASTRE - SE </span> </span>
       </div>
     </div>
   </body>
@@ -103,5 +103,10 @@
 
         return false;
     }
-
+    function abrir_cadastro(){
+        window.location.href = "cadastro.html"
+    }
+    function voltar_index(){
+        window.location.href = "index.html"
+    }
 </script>

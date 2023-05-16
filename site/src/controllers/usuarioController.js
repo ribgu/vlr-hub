@@ -25,11 +25,13 @@ function listar(req, res) {
 }
 
 function entrar(req, res) {
+
+    // Recebe as inputs aqui postas no JS da pagina de Login
     var email = req.body.emailServer;
     var senha = req.body.senhaServer;
 
     if (email == undefined) {
-        res.status(400).send("Seu email está undefined!");
+        res.status(400).send("Seu email está indefinido!");
     } else if (senha == undefined) {
         res.status(400).send("Sua senha está indefinida!");
     } else {
@@ -61,26 +63,29 @@ function entrar(req, res) {
 }
 
 function cadastrar(req, res) {
-    // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
+
+    // Recebe as inputs aqui postas no JS da pagina de Cadastro
     var nome = req.body.nomeServer;
     var email = req.body.emailServer;
     var senha = req.body.senhaServer;
-    var nickname = req.body.nickServer;
+    var nickname = req.body.nicknameServer;
+    var confirmarSenha = req.body.confirmarSenhaServer
 
     // Faça as validações dos valores
     if (nome == undefined) {
         res.status(400).send("Seu nome está undefined!");
+    } else if (nickname == undefined){
+        res.status(400).send("Seu nickname está undefined!")
     } else if (email == undefined) {
         res.status(400).send("Seu email está undefined!");
     } else if (senha == undefined) {
         res.status(400).send("Sua senha está undefined!");
-    } else if (nickname == undefined) {
-        res.status(400).send("Sua senha está undefined!");
-
+    } else if (confirmarSenha == undefined) {
+        res.status(400).send("Sua confirmação de senha está undefined!");
     }else {
         
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        usuarioModel.cadastrar(nome, email, senha, nickname)
+        usuarioModel.cadastrar(nome, email, nickname, senha)
             .then(
                 function (resultado) {
                     res.json(resultado);

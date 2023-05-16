@@ -30,31 +30,32 @@
         <input type="text" id="inp_nome" class="input" placeholder="NOME">
         <input type="email" id="inp_email" class="input2" placeholder="EMAIL">
         <input type="text" id="inp_nickname" class="input2" placeholder="NICKNAME">
-        <input type="password" id="inp_senha" class="input2" placeholder="SENHA">
-        <input type="password" id="inp_confirm_senha" class="input2" placeholder="CONFIRMAR SENHA">
+        <input type="text" id="inp_senha" class="input2" placeholder="SENHA">
+        <input type="text" id="inp_confirmar_senha" class="input2" placeholder="CONFIRMAR SENHA">
         </div>
         <span id="mensagem_erro"></span>
         <button  onclick="cadastrar()" class="botao_cadastrar"><span class="material-symbols-outlined" id="arrow_login">arrow_right_alt</span></button>
-        <span class="redirecionando_login">Ja tem uma conta? Faça seu <span class="caps"> LOGIN </span> </span>
+        <span class="redirecionando_login">Ja tem uma conta? Faça seu <span class="caps" onclick="abrir_login()"> LOGIN </span> </span>
       </div>
     </div>
   </body>
 </html>
 <script>
   function cadastrar() {
-      aguardar();
 
       //Recupere o valor da nova input pelo nome do id
       // Agora vá para o método fetch logo abaixo
-      var nomeVar = nome_input.value;
-      var emailVar = email_input.value;
-      var senhaVar = senha_input.value;
-      var confirmacaoSenhaVar = confirmacao_senha_input.value;
+      var nomeVar = inp_nome.value;
+      var emailVar = inp_email.value;
+      var senhaVar = inp_senha.value;
+      var confirmarSenhaVar = inp_confirmar_senha.value;
+      var nicknameVar = inp_nickname.value;
+      
 
       //Validações de usúario
       var emailValidado = (emailVar.indexOf("@") != -1) && (emailVar.indexOf(".") != -1);
-      var confirmacaoSenhaValidada = senhaVar == confirmacaoSenhaVar;
-      var senhaForteValidada = senhaVar.lenght >= 8 &&
+      var confirmacaoSenhaValidada = senhaVar == confirmarSenhaVar;
+      var senhaForteValidada = senhaVar.length >= 8 &&
       (senhaVar.indexOf("!") != -1 ||
       senhaVar.indexOf("@") != -1 ||
       senhaVar.indexOf("#") != -1 ||
@@ -65,18 +66,18 @@
       senhaVar.indexOf("*") != 1 ||
       senhaVar.indexOf("_") != 1);
 
-      if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
+      if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmarSenhaVar == "") {
           mensagem_erro.innerHTML = "(TODOS OS CAMPOS ESTÃO EM BRANCO)";
           return false;
-      } else if(emailValidado){
+      } else if(!emailValidado){
           mensagem_erro.innerHTML = "(EMAIL INVÁLIDO)";
-      }else if(confirmacaoSenhaValidada){
+      }else if(!confirmarSenhaVar){
           mensagem_erro.innerHTML = "(A SENHA PRECISA SER IGUAL NOS 2 CAMPOS)";
-      }else if(senhaForteValidada){
+      }else if(!senhaForteValidada){
           mensagem_erro.innerHTML = "(A SENHA PRECISA TER 8 CARACTERES E NO MÍNIMO 1 ESPECIAL)";
       }
       else {
-          setInterval(sumirMensagem, 5000)
+        mensagem_erro.innerHTML = "(SUCESSO!)";
       }
 
       // Enviando o valor da nova input
@@ -91,7 +92,8 @@
               nomeServer: nomeVar,
               emailServer: emailVar,
               senhaServer: senhaVar,
-              nickServer: nickVar,
+              nicknameServer: nicknameVar,
+              confirmarSenhaServer: confirmarSenhaVar
           })
       }).then(function (resposta) {
 
@@ -101,7 +103,7 @@
               mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
 
               setTimeout(() => {
-                  window.location = "login.html";
+                  window.location.href = "login.html";
               }, "2000")
 
               limparFormulario();
@@ -115,5 +117,8 @@
 
       return false;
   }
+  function abrir_login(){
+        window.location.href = "cadastro.html"
+    }
 
 </script>
