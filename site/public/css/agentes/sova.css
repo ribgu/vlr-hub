@@ -6,7 +6,7 @@
 }
 
 .background_iniciadores{
-    background-image: url(../imgs/iniciadores/fundo_iniciadores.png);
+    background-image: url(../../imgs/iniciadores/fundo_iniciadores.png);
     background-size:cover;
     height: 85vh;
     display: flex;

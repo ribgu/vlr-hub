@@ -6,7 +6,7 @@
 }
 
 .background_iniciadores{
-    background-image: url(../imgs/sentinelas/fundo_sentinelas.png);
+    background-image: url(../../imgs/sentinelas/fundo_sentinelas.png);
     background-size:cover;
     height: 85vh;
     display: flex;

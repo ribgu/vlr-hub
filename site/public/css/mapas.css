@@ -5,8 +5,8 @@
 
 }
 
-.background_reyna{
-    background-image: url(../imgs/reyna_fundo.png);
+.background_mapas{
+    background-image: url(../imgs/background-mapas.png);
     background-size:cover;
     height: 100vh;
     display: flex;
@@ -49,7 +49,6 @@
     text-decoration: none;
     color: white;
     transition: 0.3s ease;
-    cursor: pointer;
 }
 .home:hover {
     transform: scale(1.2);
@@ -63,83 +62,52 @@
 }
 .links:hover {
     transform: scale(1.1);
-  }
+}
 
 .container{
     width: 45%;
     height: 30%;
-    margin-top: 23%;
-    margin-left: 3%;
+    margin-top: 15%;
+    margin-left: 5%;
 }
 .titulo{
     font-weight: 800;
     font-size: 3vmax;
-    color: #FF4655;
+    color: white;
     font-family: 'Montserrat', sans-serif;
+    line-height: 170%;
+    
 }
 .texto{
-    font-size: 1.2vmax;
+    font-size: 1.5vmax;
     color: white;
     line-height: 170%;
 }
-.bloco2{
-    display: flex;
-    justify-items: row;
-}
-.caixa_texto{
-    width: 40%;
-    margin-left: 3%;
-    margin-top: 3%;
-}
-.titulo2{
-    font-weight: bolder;
-    font-size: 24px;
-    color: black;
-}
-.texto2{
-    color: #706D6D;
-    font-size: 17px;
-    line-height: 180%;
-}
-.bloco3{
-    display: flex;
-    margin-top: 2%;
-    margin-left: 2%;
-    margin-bottom: 3%;
-    flex-direction: column;
-}
-.bloco4{
-    background-image: url(../imgs/fundoviper.png);
-    height: 86vh;
-    display: flex;
-    align-items: center;
-}
-.cards{
+.seta_baixo{
     display: flex;
     color: white;
-    width: 20%;
-    margin-left: 10%;
-    line-height: 170%;
+    margin-top: 13%;
     flex-direction: column;
-}
-.qtd_fps{
-    display: flex;
-    font-weight: bolder;
-    font-size: 30px;
-    justify-content: center;
-    width: 100%;
-}
-.footer{
-    height: 15vh;
-    background-color: black;
-    display: flex;
-    justify-content: center;
     align-items: center;
+    width: 15%;
+    margin-left: 45%;
+    transition: 0.3s ease;
+    cursor: pointer;
 }
-.copy{
-    font-weight: bold;
-    color: white;
+
+
+.seta_baixo:hover {
+    transform: scale(1.2);
 }
-.footer img{
-    margin-right: 3%;
+
+.conheca{
+    font-weight: 800;
+}
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 700,
+    'GRAD' 0,
+    'opsz' 70;
+    font-size: 1.5vmax;
 }

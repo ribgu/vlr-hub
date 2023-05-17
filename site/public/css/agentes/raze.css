@@ -6,7 +6,7 @@
 }
 
 .background_duelistas{
-    background-image: url(../imgs/duelistas/background_duel.png);
+    background-image: url(../../imgs/duelistas/background_duel.png);
     background-size:cover;
     height: 85vh;
     display: flex;
