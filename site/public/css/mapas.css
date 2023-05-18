@@ -88,7 +88,7 @@
 .seta_baixo{
     display: flex;
     color: white;
-    margin-top: 39%;
+    margin-top: 40%;
     position: absolute;
     flex-direction: column;
     align-items: center;
@@ -101,6 +101,14 @@
 
 .seta_baixo:hover {
     transform: scale(1.2);
+}
+#seta_baixo{
+  font-size: 50px;
+}
+@keyframes jumping {
+  from {transform: translateX(-15px);}
+  50% {transform: translateX(0px);}
+  to {transform: translateX(-15px);}
 }
 
 .conheca{
@@ -157,4 +165,18 @@
   color: white;
   line-height: 170%;
 
+}
+.footer{
+  height: 15vh;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.copy{
+  font-weight: bold;
+  color: white;
+}
+.footer img{
+  margin-right: 3%;
 }
