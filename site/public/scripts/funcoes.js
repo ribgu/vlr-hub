@@ -1,6 +1,5 @@
 // sessão
 function validarSessao() {
-    // aguardar();
 
     var email = sessionStorage.EMAIL_USUARIO;
     var nome = sessionStorage.NOME_USUARIO;
@@ -8,7 +7,7 @@ function validarSessao() {
     const botao_login = document.getElementById("botao_login");
 
     if (email != null && nome != null) {
-        botao_login.style.display = none
+        botao_login.style.display = 'none';
 
         
     }

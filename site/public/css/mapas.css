@@ -114,3 +114,47 @@
     'opsz' 70;
     font-size: 1.5vmax;
 }
+#carrosel{
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  background-image: url(../imgs/carrosel_ascent.png);
+}
+#container_texto{
+  width: 60%;
+  height: 55%;
+  margin-top: 15%;
+  width: 40%;
+  margin-left: 10%;
+}
+#botao_avancar{
+  position: absolute;
+  margin-left: 98%;
+  margin-top: 20%;
+  color: white;
+  cursor: pointer;
+  
+}
+
+#botao_retroceder{
+  position: absolute;
+  margin-top: 20%;
+  color: white;
+  cursor: pointer;
+
+}
+.titulo_mapa{
+  font-weight: 800;
+  font-size: 3vmax;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 170%;
+  
+}
+.texto_mapa{
+  font-size: 1.5vmax;
+  color: white;
+  line-height: 170%;
+
+}

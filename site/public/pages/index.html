@@ -5,17 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>VLR - HUB | Home</title>
-    <link
-      rel="stylesheet"
-      href="..\css\style.css"
-    />
+    <link rel="stylesheet" href="..\css\style.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Montserrat"
       rel="stylesheet"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="script" href="../scripts/funcoes.js" />
   </head>
   <body>
     <div class="background_reyna">
@@ -27,7 +28,9 @@
           <a class="links" href="./tips.html"> PRO-TIPS </a>
           <a class="links" href="./tips.html"> CALCULADORA </a>
         </div>
-        <button class="login" id="botao_login" onclick="abrir_login()">ENTRAR</button>
+        <button class="login" id="botao_login" onclick="abrir_login()">
+          ENTRAR
+        </button>
       </div>
       <div class="container">
         <div class="caixa">
@@ -61,51 +64,73 @@
       </div>
     </div>
     <div class="bloco3">
-        <span class="titulo2">GRATUITO PARA JOGAR!</span><br/><br>
-        <span class="texto2">O jogo é gratuito para jogar. Isso significa que você pode baixá-lo e jogá-lo sem precisar gastar dinheiro para comprar o jogo ou pagar assinaturas mensais. Porém ele exige requisitos mínimos de hardware e software, são eles:</span>
+      <span class="titulo2">GRATUITO PARA JOGAR!</span><br /><br />
+      <span class="texto2"
+        >O jogo é gratuito para jogar. Isso significa que você pode baixá-lo e
+        jogá-lo sem precisar gastar dinheiro para comprar o jogo ou pagar
+        assinaturas mensais. Porém ele exige requisitos mínimos de hardware e
+        software, são eles:</span
+      >
     </div>
     <div class="bloco4">
-        <div class="cards"> 
-            <span class="qtd_fps">30 FPS</span>
-            <ul class="requisitos">
-                <li>CPU: Intel Core 2 Duo E8400 ou AMD Athlon 200GE</li>
-                <li>GPU: Intel HD 4000 ou Radeon R5 200</li>
-                <li>OS: Windows 10 ou Superior (x64)</li>
-                <li>RAM: 4GB</li>
-                <li>VRAM: 1GB</li>
-            </ul>
+      <div class="cards">
+        <span class="qtd_fps">30 FPS</span>
+        <ul class="requisitos">
+          <li>CPU: Intel Core 2 Duo E8400 ou AMD Athlon 200GE</li>
+          <li>GPU: Intel HD 4000 ou Radeon R5 200</li>
+          <li>OS: Windows 10 ou Superior (x64)</li>
+          <li>RAM: 4GB</li>
+          <li>VRAM: 1GB</li>
+        </ul>
+      </div>
+      <div class="cards">
+        <div class="titulofps">
+          <span class="qtd_fps">60 FPS</span>
         </div>
-        <div class="cards"> 
-            <div class="titulofps">
-            <span class="qtd_fps">60 FPS</span>
-            </div>
-            <ul class="requisitos">
-                <li>CPU: Intel i3-4150 ou AMD Ryzen 3 1200</li>
-                <li>GPU: Geforce GT 730 ou Radeon R7 240</li>
-                <li>OS: Windows 10 ou Superior (x64)</li>
-                <li>RAM: 4GB</li>
-                <li>VRAM: 1GB</li>
-            </ul>
-        </div>
-        <div class="cards"> 
-            <span class="qtd_fps">+144 FPS</span>
-            <ul class="requisitos">
-                <li>CPU: Intel i5-9400F 2.9GHz ou AMD Ryzen 5 2600X</li>
-                <li>GPU: GTX 1050 Ti ou Radeon R7 370</li>
-                <li>OS: Windows 10 ou Superior (x64)</li>
-                <li>RAM: 4GB</li>
-                <li>VRAM: 1GB</li>
-            </ul>
-        </div>
+        <ul class="requisitos">
+          <li>CPU: Intel i3-4150 ou AMD Ryzen 3 1200</li>
+          <li>GPU: Geforce GT 730 ou Radeon R7 240</li>
+          <li>OS: Windows 10 ou Superior (x64)</li>
+          <li>RAM: 4GB</li>
+          <li>VRAM: 1GB</li>
+        </ul>
+      </div>
+      <div class="cards">
+        <span class="qtd_fps">+144 FPS</span>
+        <ul class="requisitos">
+          <li>CPU: Intel i5-9400F 2.9GHz ou AMD Ryzen 5 2600X</li>
+          <li>GPU: GTX 1050 Ti ou Radeon R7 370</li>
+          <li>OS: Windows 10 ou Superior (x64)</li>
+          <li>RAM: 4GB</li>
+          <li>VRAM: 1GB</li>
+        </ul>
+      </div>
     </div>
     <div class="footer">
-        <img src="../imgs/riot.png">
-        <span class="copy">Copyright © 2023 - 2023 VLR-HUB. Todos os direitos reservados.</span>
+      <img src="../imgs/riot.png" />
+      <span class="copy"
+        >Copyright © 2023 - 2023 VLR-HUB. Todos os direitos reservados.</span
+      >
     </div>
   </body>
 </html>
 <script>
- function abrir_login(){
+  function abrir_login() {
     window.location.href = "login.html";
   }
+
+  function validarSessao() {
+  var email = sessionStorage.getItem('EMAIL_USUARIO');
+  var nome = sessionStorage.getItem('NOME_USUARIO');
+
+  const botao_login = document.getElementById("botao_login");
+
+  if (email != null && nome != null) {
+    botao_login.style.display = "none";
+  }
+}
+
+    window.onload = function() {
+      validarSessao();
+    };
 </script>

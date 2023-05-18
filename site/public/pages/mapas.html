@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>VLR - HUB | Mapas</title>
-    <link rel="stylesheet" href="..\css\mapas.css" />
+    <link rel="stylesheet" href="../css/mapas.css" />
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 </head>
-
 <body>
     <div class="background_mapas">
         <div class="header">
@@ -41,12 +41,87 @@
             <span class="material-symbols-outlined">arrow_downward</span>
         </div>
     </div>
-    <div class="container_carrosel">
-        asgagsbr  <br>
-        afsnas <br> GRAD
-        sjag <br>
+    <div id="carrosel">
+        <div id="container_texto">
+            <span class="titulo_mapa">ASCENT</span> <BR>
+            <span class="texto_mapa">Com várias opções de posicionamento e conflito, um território aberto divide duas áreas em Ascent. Cada uma pode ser fortificada por portas explosivas irreversíveis que, quando derrubadas, forçam as equipes a destruí-las ou a acharem outra maneira de prosseguir. Não deixe que o inimigo tome o seu território.</span>
+        </div>
         
+        <span class="material-symbols-outlined" id="botao_retroceder" onclick="voltar()">arrow_back_ios</span>
+        <span class="material-symbols-outlined" id="botao_avancar" onclick="avancar()">arrow_forward_ios</span>
+        <button onclick="voltar()">testevolta</button>
+        <button onclick="avancar()">testeavanco</button>
     </div>
-    
-
+</body>
 </html>
+<script>
+    const titulo_mapa = document.getElementById("titulo_mapa");
+    const texto_mapa = document.getElementById("texto_mapa");
+    const carrosel = document.getElementById("carrosel");
+    var proximoMapa = false;
+    var posicao = 0
+
+var listaMapas = [
+    {nome: "ASCENT",
+    imagem: "../imgs/carrosel_ascent.png",
+    texto: "Com várias opções de posicionamento e conflito, um território aberto divide duas áreas em Ascent. Cada uma pode ser fortificada por portas explosivas irreversíveis que, quando derrubadas, forçam as equipes a destruí-las ou a acharem outra maneira de prosseguir. Não deixe que o inimigo tome o seu território."},
+
+    {nome: "FRACTURE",
+    imagem: "../imgs/carrosel_fracture.png",
+    texto: "Um local de pesquisas altamente confidencial partido ao meio por um experimento com Radianita malsucedido. Com opções tão divididas quanto o próprio mapa para os defensores, a escolha é sua: encare os atacantes na própria base deles ou prepare o terreno para um ataque iminente."},
+
+    {nome: "BIND",
+    imagem: "../imgs/carrosel_fracture.png",
+    texto: "Dois pontos. Nenhuma área no meio. Você precisa escolher: direita ou esquerda? E aí, qual vai ser? Ambos os lados oferecem caminhos diretos para os atacantes, e dois teleportadores de sentido único facilitam o flanqueamento."},
+
+    {nome: "BREZZE",
+    imagem: "../imgs/carrosel_brezze.png",
+    texto: "Dois pontos. Nenhuma área no meio. Você precisa escolher: direita ou esquerda? E aí, qual vai ser? Ambos os lados oferecem caminhos diretos para os atacantes, e dois teleportadores de sentido único facilitam o flanqueamento."},
+
+    {nome: "HAVEN",
+    imagem: "../imgs/carrosel_haven.png",
+    texto: "Sob um mosteiro abandonado, é possível ouvir agentes se enfrentando pelo controle de três pontos distintos. Neste mapa, há mais áreas para controlar. Em compensação, os defensores também conseguem aproveitar o território extra para coordenar investidas mais agressivas."},
+
+    {nome: "LOTUS",
+    imagem: "../imgs/carrosel_lotus.png",
+    texto: "Uma estrutura misteriosa com um conduíte astral irradia poder ancestral. Grandes portas de pedra oferecem várias oportunidades de movimentação e revelam caminhos para três locais enigmáticos."},
+    
+    {nome: "PEARL",
+    imagem: "../imgs/carrosel_pearl.png",
+    texto: "Atacantes avançam em direção aos Defensores neste vibrante mapa subaquático com dois pontos principais. Pearl é um mapa sem mecânicas focado no ambiente. Encare a batalha em um Meio compacto ou em áreas mais alongadas no nosso primeiro mapa situado na Terra Ômega."},
+
+    {nome: "SPLIT",
+    imagem: "../imgs/carrosel_split.png",
+    texto: "Se quiser avançar, é preciso subir. Separados por uma área central elevada, dois pontos fornecem movimentação rápida com duas cordas ascendentes. Cada ponto tem uma torre imponente que é vital para o controle da área. E não se esqueça: mantenha os olhos abertos e focados nas áreas elevadas antes que tudo vá pelos ares."},
+];
+function avancar() {
+
+if (posicao < listaMapas.length){
+    posicao++
+    titulo_mapa.innerHTML = listaMapas[posicao].nome
+    texto_mapa.innerHTML = listaMapas[posicao].texto
+    carrosel.style.backgroundImage = `url(${listaMapas[posicao].imagem})`;
+
+}
+}
+
+function voltar() {
+if (posicao <= listaMapas.length){
+    posicao--
+    titulo_mapa.innerHTML = listaMapas[posicao].nome
+    texto_mapa.innerHTML = listaMapas[posicao].texto
+    carrosel.style.backgroundImage = `url(${listaMapas[posicao].imagem})`;
+}
+}
+
+// window.addEventListener("DOMContentLoaded", function() {
+//             // Selecionar a span
+//             var spanVoltar = document.getElementById("botao_retroceder");
+//             var spanAvancar = document.getElementById("botao_avancar");
+
+//             // Adicionar o evento de clique à span
+//             spanVoltar.addEventListener("click", voltar);
+//             spanAvancar.addEventListener("click", avancar);
+//         });
+    
+</script>
