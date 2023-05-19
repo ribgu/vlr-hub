@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VLR - HUB | Home</title>
+    <link rel="stylesheet" href="..\css\calc.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="script" href="../scripts/funcoes.js" />
+  </head>
+  <body>
+    <div class="background_calc">
+      <div class="header">
+        <div class="navbar">
+          <a class="links" href="./index.html"> HOME </a>
+          <a class="links" href="./agentes.html"> AGENTES </a>
+          <a class="links" href="./mapas.html"> MAPAS </a>
+          <a class="calc" href="./tips.html"> CALCULADORA </a>
+        </div>
+      </div>
+      <div class="container">
+        <div class="caixa">
+          <span class="titulo">eDPI ou Effectve Dots Per Inch</span>
+          <p class="texto">
+            É o termo é usado para mensurar a sua “verdadeira sensibilidade” Assim você pode comparar suas configurações independentemente do jogo ou do hardware. 
+            Portanto, o eDPI de dois jogadores pode ser igual mesmo eles usando DPI’s e Sensibilidades diferentes.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="bloco_calc">
+        <div class="container_2">
+            <div class="caixa_inputs">
+                <div class="caixa_dpi">
+                    <span class="titulo_calc">DPI:</span>
+                    <input type="number" id="inp_dpi">
+                </div>
+                <div class="caixa_sensi">
+                    <span class="titulo_calc">SENSIBILIDADE:</span>
+                    <input type="number" id="inp_sensi">
+                </div>
+                <div class="caixa_result">
+                    <div class="mostrar">
+                        <span class="titulo_result">SUA eDPI é:</span>
+                        <div class="caixa_edpi"> <span id="resultadoEDPI"></span> </div>
+                    </div>
+                    <button class="calcular" onclick="calcular_edpi()">CALCULAR</button>
+                </div>
+            </div>
+            <div class="caixa_grafico"></div>
+        </div>
+    </div>
+    </body>
+    </html>
+    <script>
+        function calcular_edpi(){
+            var dpiVar = Number(inp_dpi.value);
+            var sensiVar = Number(inp_sensi.value);
+            var eDPIVar = dpiVar * sensiVar;
+            const mostrarResult = document.getElementById('resultadoEDPI');
+
+            mostrarResult.innerHTML = `${eDPIVar}`
+        }
+    </script>
+    

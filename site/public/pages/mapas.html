@@ -38,7 +38,7 @@
         </div>
         <div class="seta_baixo">
             <span class="conheca">CONHEÇA OS MAPAS</span>
-            <span class="material-symbols-outlined" id="seta_baixo">arrow_downward</span>
+            <span class="material-symbols-outlined">arrow_downward</span>
         </div>
     </div>
     <div id="carrosel">
@@ -49,13 +49,9 @@
         
         <span class="material-symbols-outlined" id="botao_retroceder" onclick="voltar()">arrow_back_ios</span>
         <span class="material-symbols-outlined" id="botao_avancar" onclick="avancar()">arrow_forward_ios</span>
+        <button onclick="voltar()">testevolta</button>
+        <button onclick="avancar()">testeavanco</button>
     </div>
-    <div class="footer">
-        <img src="../imgs/riot.png" />
-        <span class="copy"
-          >Copyright © 2023 - 2023 VLR-HUB. Todos os direitos reservados.</span
-        >
-      </div>
 </body>
 </html>
 <script>
@@ -75,7 +71,7 @@ var listaMapas = [
     texto: "Um local de pesquisas altamente confidencial partido ao meio por um experimento com Radianita malsucedido. Com opções tão divididas quanto o próprio mapa para os defensores, a escolha é sua: encare os atacantes na própria base deles ou prepare o terreno para um ataque iminente."},
 
     {nome: "BIND",
-    imagem: "../imgs/carrosel_bind.png",
+    imagem: "../imgs/carrosel_fracture.png",
     texto: "Dois pontos. Nenhuma área no meio. Você precisa escolher: direita ou esquerda? E aí, qual vai ser? Ambos os lados oferecem caminhos diretos para os atacantes, e dois teleportadores de sentido único facilitam o flanqueamento."},
 
     {nome: "BREZZE",
@@ -118,9 +114,6 @@ if (posicao <= listaMapas.length){
 }
 }
 
-const botao = document.querySelector('#seta_baixo');
 
-botao.addEventListener('click', () =>{
-    window.scroll({top:window.innerHeight, behavior:"smooth"})
-})
+    
 </script>
