@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>VLR - HUB | Login</title>
+    <title>VLR - HUB | Cadastro</title>
     <link rel="stylesheet" href="..\css\cadastro.css"/>
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"/>
     <link rel="preconnect" href="'https://fonts.googleapis.com"/>
@@ -20,7 +20,7 @@
     <div class="container">
       <div class="fundo_astra"></div>
       <div class="bloco_forms">
-        <span class="material-symbols-outlined" id="voltar">arrow_back_ios</span>
+        <span class="material-symbols-outlined" id="voltar" onclick="voltarPagina()">arrow_back_ios</span>
         <div class="titulo">
           <p class="texto_titulo">BEM VINDO AO VLR-HUB</p>
         </div class="bloco_inputs">
@@ -119,6 +119,9 @@
   }
   function abrir_login(){
         window.location.href = "cadastro.html"
+    }
+  function voltarPagina() {
+      window.history.back();
     }
 
 </script>

@@ -21,7 +21,7 @@
     <div class="container">
       <div class="fundo_astra"></div>
       <div class="bloco_forms">
-        <span class="material-symbols-outlined" id="voltar">arrow_back_ios</span>
+        <span class="material-symbols-outlined" id="voltar" onclick="voltarPagina()">arrow_back_ios</span>
         <div class="titulo">
           <p class="texto_titulo">BEM VINDO AO VLR-HUB</p>
         </div class="bloco_inputs">
@@ -104,4 +104,7 @@
     // function voltar_index(){
     //     window.location.href = "index.html"
     // }
+    function voltarPagina() {
+      window.history.back();
+    }
 </script>

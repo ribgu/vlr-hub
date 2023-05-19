@@ -27,6 +27,9 @@
           <a class="links" href="./mapas.html"> MAPAS </a>
           <a class="links" href="./calc.html"> CALCULADORA </a>
         </div>
+        <button class="sair" id="botao_sair" onclick="limparSessao()">
+          SAIR
+        </button>
         <button class="login" id="botao_login" onclick="abrir_login()">
           ENTRAR
         </button>
@@ -132,4 +135,9 @@
     window.onload = function() {
       validarSessao();
     };
+
+    function limparSessao() {
+    sessionStorage.clear();
+    window.location.reload(true);
+}
 </script>

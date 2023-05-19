@@ -1,3 +1,7 @@
+
+html {
+  scroll-behavior: smooth;
+}
 * {
     margin: 0;
     padding: 0;
@@ -105,11 +109,7 @@
 #seta_baixo{
   font-size: 50px;
 }
-@keyframes jumping {
-  from {transform: translateX(-15px);}
-  50% {transform: translateX(0px);}
-  to {transform: translateX(-15px);}
-}
+
 
 .conheca{
     font-weight: 800;
@@ -138,11 +138,16 @@
 }
 #botao_avancar{
   position: absolute;
-  margin-left: 98%;
+  margin-left: 95%;
   margin-top: 20%;
   color: white;
   cursor: pointer;
+  font-size: 50px;
+  transition: 0.3s ease;
   
+}
+#botao_avancar:hover{
+  transform: scale(1.2);
 }
 
 #botao_retroceder{
@@ -150,7 +155,12 @@
   margin-top: 20%;
   color: white;
   cursor: pointer;
-
+  font-size: 50px;
+  transition: 0.3s ease;
+  margin-left: 1.4%;
+}
+#botao_retroceder:hover{
+  transform: scale(1.2);
 }
 .titulo_mapa{
   font-weight: 800;

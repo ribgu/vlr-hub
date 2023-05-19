@@ -117,6 +117,7 @@ input:focus{
     position: absolute;
     margin-top: 1%;
     color: #92568F;
+    cursor: pointer;
 }
 .redirecionando_login{
     font-size: 1vmax;
