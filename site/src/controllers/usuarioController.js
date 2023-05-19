@@ -139,10 +139,47 @@ function cadastro_eDPI(req, res) {
     }
 }
 
+function verificar_eDPI(req, res) {
+
+    // Recebe as inputs aqui postas no JS da pagina de Login
+    var fk_usuario = req.body.fkUsuarioServer;
+
+    if (fk_usuario == undefined) {
+        res.status(400).send("Seu usuario está indefinido!");
+    } else {
+        
+        usuarioModel.verificar_eDPI(fk_usuario)
+            .then(
+                function (resultado) {
+                    
+
+                    if (resultado.length == 0) {
+                        console.log(`\nResultados encontrados: ${resultado.length}`);
+                        console.log(`Resultados: ${JSON.stringify(resultado)}`); // transforma JSON em String
+                        console.log(resultado);
+                        res.json(resultado[0]);
+                        
+                      }else{
+                        res.status(204).send("vc ja tem dpi")
+                      }
+                    
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log("\nHouve um erro ao realizar a verificacao do eDPI! Erro: ", erro.sqlMessage);
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+
+}
+
 module.exports = {
     entrar,
     cadastrar,
     listar,
     testar,
-    cadastro_eDPI
+    cadastro_eDPI,
+    verificar_eDPI
 }

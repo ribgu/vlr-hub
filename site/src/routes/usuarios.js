@@ -23,5 +23,9 @@ router.post("/autenticar", function (req, res) {
 router.post("/cadastro_eDPI", function (req, res) {
     usuarioController.cadastro_eDPI(req, res);
 })
+// rota do select do dpi
+router.post("/verificar_eDPI", function (req, res) {
+    usuarioController.verificar_eDPI(req, res);
+});
 
 module.exports = router;

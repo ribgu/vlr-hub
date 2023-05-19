@@ -44,9 +44,19 @@ function cadastro_eDPI(sensi, dpi, eDPI, fk_usuario) {
     return database.executar(instrucao);
 }
 
+function verificar_eDPI(fk_usuario) {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function entrar(): ", fk_usuario)
+    var instrucao = `
+            SELECT * from eDPI where fk_usuario = ${fk_usuario};
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
 module.exports = {
     entrar,
     cadastrar,
     listar,
-    cadastro_eDPI
+    cadastro_eDPI,
+    verificar_eDPI
 };
