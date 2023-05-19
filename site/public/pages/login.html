@@ -32,7 +32,7 @@
         <input type="password" id="inp_senha" class="input2" placeholder="SENHA">
         </div>
         <span id="alerta"></span>
-        <button class="logar"><span class="material-symbols-outlined" id="arrow_login" onclick="voltar_index()">arrow_right_alt</span></button>
+        <button class="logar"><span class="material-symbols-outlined" id="arrow_login" onclick="entrar()">arrow_right_alt</span></button>
         <span class="cadastrar">Não tem conta ainda? <span class="caps" onclick="abrir_cadastro()"> CADASTRE - SE </span> </span>
       </div>
     </div>
@@ -47,13 +47,8 @@
         var senhaVar = inp_senha.value;
 
         if (emailVar == "" || senhaVar == "") {
-            cardErro.style.display = "block"
             mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
-            finalizarAguardar();
             return false;
-        }
-        else {
-            setInterval(sumirMensagem, 5000)
         }
 
         console.log("FORM LOGIN: ", emailVar);
@@ -78,9 +73,10 @@
   console.log(json);
   console.log(JSON.stringify(json));
 
-  sessionStorage.setItem('EMAIL_USUARIO', json.email);
-  sessionStorage.setItem('NOME_USUARIO', json.nome);
-  sessionStorage.setItem('ID_USUARIO', json.id);
+  sessionStorage.EMAIL_USUARIO = json.email;
+  sessionStorage.NOME_USUARIO = json.nome;
+  sessionStorage.ID_USUARIO = json.id;
+
 
   setTimeout(function () {
     window.location = "index.html";
@@ -93,7 +89,6 @@
 
                 resposta.text().then(texto => {
                     console.error(texto);
-                    finalizarAguardar(texto);
                 });
             }
 
@@ -102,11 +97,11 @@
         })
 
         return false;
-    }
+    }                                                                                                                                                                                                      
     function abrir_cadastro(){
         window.location.href = "cadastro.html"
     }
-    function voltar_index(){
-        window.location.href = "index.html"
-    }
+    // function voltar_index(){
+    //     window.location.href = "index.html"
+    // }
 </script>

@@ -18,7 +18,14 @@
     />
     <link rel="script" href="../scripts/funcoes.js" />
   </head>
-  <body>
+  <body id="body">
+    <div id="popup" class="popup">
+      <div class="popup-content">
+        <h2>FAÇA SEU LOGIN</h2>
+        <p>Para ter o acesso a essa página faça seu login</p>
+        <button id="closeBtn" onclick="abrir_login()">LOGIN</button>
+      </div>
+    </div>
     <div class="background_calc">
       <div class="header">
         <div class="navbar">
@@ -32,44 +39,105 @@
         <div class="caixa">
           <span class="titulo">eDPI ou Effectve Dots Per Inch</span>
           <p class="texto">
-            É o termo é usado para mensurar a sua “verdadeira sensibilidade” Assim você pode comparar suas configurações independentemente do jogo ou do hardware. 
-            Portanto, o eDPI de dois jogadores pode ser igual mesmo eles usando DPI’s e Sensibilidades diferentes.
+            É o termo é usado para mensurar a sua “verdadeira sensibilidade”
+            Assim você pode comparar suas configurações independentemente do
+            jogo ou do hardware. Portanto, o eDPI de dois jogadores pode ser
+            igual mesmo eles usando DPI’s e Sensibilidades diferentes.
           </p>
         </div>
       </div>
     </div>
     <div class="bloco_calc">
-        <div class="container_2">
-            <div class="caixa_inputs">
-                <div class="caixa_dpi">
-                    <span class="titulo_calc">DPI:</span>
-                    <input type="number" id="inp_dpi">
-                </div>
-                <div class="caixa_sensi">
-                    <span class="titulo_calc">SENSIBILIDADE:</span>
-                    <input type="number" id="inp_sensi">
-                </div>
-                <div class="caixa_result">
-                    <div class="mostrar">
-                        <span class="titulo_result">SUA eDPI é:</span>
-                        <div class="caixa_edpi"> <span id="resultadoEDPI"></span> </div>
-                    </div>
-                    <button class="calcular" onclick="calcular_edpi()">CALCULAR</button>
-                </div>
+      <div class="container_2">
+        <div class="caixa_inputs">
+          <div class="caixa_dpi">
+            <span class="titulo_calc">DPI:</span>
+            <input type="number" id="inp_dpi" />
+          </div>
+          <div class="caixa_sensi">
+            <span class="titulo_calc">SENSIBILIDADE:</span>
+            <input type="number" id="inp_sensi" />
+          </div>
+          <div class="caixa_result">
+            <div class="mostrar">
+              <span class="titulo_result">SUA eDPI é:</span>
+              <div class="caixa_edpi"><span id="resultadoEDPI"></span></div>
             </div>
-            <div class="caixa_grafico"></div>
+            <button class="calcular" onclick="calcular_edpi()">CALCULAR</button>
+          </div>
         </div>
+        <div class="caixa_grafico"></div>
+      </div>
     </div>
-    </body>
-    </html>
-    <script>
-        function calcular_edpi(){
-            var dpiVar = Number(inp_dpi.value);
-            var sensiVar = Number(inp_sensi.value);
-            var eDPIVar = dpiVar * sensiVar;
-            const mostrarResult = document.getElementById('resultadoEDPI');
+  </body>
+</html>
+<script>
 
-            mostrarResult.innerHTML = `${eDPIVar}`
-        }
-    </script>
-    
+  document.addEventListener('DOMContentLoaded', function() {
+  const popup = document.getElementById('popup');
+  const closeBtn = document.getElementById('closeBtn');
+
+  popup.style.display = 'flex';
+  });
+
+  function validarSessao() {
+    var email = sessionStorage.getItem("EMAIL_USUARIO");
+    var nome = sessionStorage.getItem("NOME_USUARIO");
+
+    const body = document.getElementById("body");
+
+    if (email != null && nome != null) {
+      popup.style.display = 'none';
+    }
+  }
+  function calcular_edpi() {
+    var dpiVar = Number(inp_dpi.value);
+    var sensiVar = Number(inp_sensi.value);
+    var eDPIVar = dpiVar * sensiVar;
+    const mostrarResult = document.getElementById("resultadoEDPI");
+
+
+
+    fetch("/usuarios/cadastro_eDPI", {
+          method: "POST",
+          headers: {
+              "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+              // crie um atributo que recebe o valor recuperado aqui
+              // Agora vá para o arquivo routes/usuario.js
+              dpiServer: dpiVar,
+              sensiServer: sensiVar,
+              eDPIServer: eDPIVar
+          })
+      }).then(function (resposta) {
+
+          console.log("resposta: ", resposta);
+
+          if (resposta.ok) {
+            console.log("deu certo")
+
+              setTimeout(() => {
+                mostrarResult.innerHTML = `${eDPIVar}`;
+              }, "2000")
+
+              limparFormulario();
+          } else {
+            console.log("nao foi")
+          }
+      }).catch(function (resposta) {
+          console.log(`#ERRO: ${resposta}`);
+  
+      });
+
+      return false;
+  }
+
+  window.onload = function() {
+      validarSessao();
+    };
+    function abrir_login() {
+    window.location.href = "login.html";
+  }
+
+</script>

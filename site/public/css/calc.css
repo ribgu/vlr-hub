@@ -1,3 +1,4 @@
+
 * {
     margin: 0;
     padding: 0;
@@ -172,3 +173,35 @@
     font-size: 1.3vmax;
     cursor: pointer;
 }
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .popup-content {
+    background-color: #2F3345;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    color: white;
+  }
+  
+  #closeBtn {
+    width: 20%;
+    height: 5vh;
+    margin-top: 20px;
+    border: none;
+    color: white;
+    font-size: 1.3vmax;
+    cursor: pointer;
+    background-color: #070912;
+    border-radius: 10px;
+  }
+  
