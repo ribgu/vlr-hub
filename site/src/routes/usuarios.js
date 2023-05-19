@@ -20,4 +20,8 @@ router.post("/autenticar", function (req, res) {
     usuarioController.entrar(req, res);
 });
 
+router.post("/cadastro_eDPI", function (req, res) {
+    usuarioController.cadastro_eDPI(req, res);
+})
+
 module.exports = router;

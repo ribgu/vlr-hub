@@ -108,7 +108,8 @@
               // Agora vá para o arquivo routes/usuario.js
               dpiServer: dpiVar,
               sensiServer: sensiVar,
-              eDPIServer: eDPIVar
+              eDPIServer: eDPIVar,
+              fkUsuarioServer: sessionStorage.ID_USUARIO
           })
       }).then(function (resposta) {
 
@@ -121,7 +122,6 @@
                 mostrarResult.innerHTML = `${eDPIVar}`;
               }, "2000")
 
-              limparFormulario();
           } else {
             console.log("nao foi")
           }
@@ -131,6 +131,7 @@
       });
 
       return false;
+      
   }
 
   window.onload = function() {
