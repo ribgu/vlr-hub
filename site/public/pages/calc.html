@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>VLR - HUB | Home</title>
+    <title>VLR - HUB | eDPI</title>
     <link rel="stylesheet" href="..\css\calc.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Montserrat"
@@ -64,9 +64,14 @@
               <span class="titulo_result">SUA eDPI é:</span>
               <div class="caixa_edpi"><span id="resultadoEDPI"></span></div>
             </div>
-            <button class="calcular" onclick="calcular_edpi()">CALCULAR</button>
+            <button id="calcular" onclick="calcular_edpi()">CALCULAR</button>
+            
+          </div>
+          <div id="bloco_alterar">
+          <span style="color:white">Você ja possui eDPI, <br> deseja alterar?</span> <button class="alterar" onclick="alterar_edpi()">ALTERAR</button>
           </div>
         </div>
+        
         <div class="caixa_grafico"></div>
       </div>
     </div>
@@ -110,6 +115,36 @@
       console.log("ESTOU NO THEN DO verificareDPI()!");
       if (resposta.status == 204) {
         alert("você ja tem eDPI");
+        bloco_alterar.style.display = "flex"
+        calcular.style.display = "none"
+      
+          function alterar_edpi() {
+        fetch(`/usuarios/alterar_edpi/${sessionStorage.getItem("IID_USUARIO")}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+              dpiServer: dpiVar,
+              sensiServer: sensiVar,
+              eDPIServer: eDPIVar,
+              fkUsuarioServer: sessionStorage.ID_USUARIO,
+            })
+        }).then(function (resposta) {
+
+            if (resposta.ok) {
+                window.alert("eDPI atualizado com sucesso pelo usuario de email: " + sessionStorage.getItem("EMAIL_USUARIO") + "!");
+              
+            } else if (resposta.status == 404) {
+                window.alert("Deu 404!");
+            } else {
+                throw ("Houve um erro ao tentar realizar a alteração! Código da resposta: " + resposta.status);
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+    }
+        
       } else {
         // fetch para fazer insert
         fetch("/usuarios/cadastro_eDPI", {

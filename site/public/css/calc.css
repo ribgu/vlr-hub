@@ -167,7 +167,7 @@ html {
 #inp_sensi:focus{
     outline: none;
 }
-.calcular{
+#calcular{
     width: 12vw;
     height: 10vh;
     margin-top: 6.5%;
@@ -177,6 +177,23 @@ html {
     font-size: 1.3vmax;
     cursor: pointer;
 }
+#bloco_alterar{
+    display: flex;
+    flex-direction: column;
+    margin-top: -18.8vh;
+    display: none;
+    
+}
+.alterar{
+    width: 12vw;
+    height: 10vh;
+    background-color: #2F3345;
+    border: none;
+    color: white;
+    font-size: 1.3vmax;
+    cursor: pointer;
+}
+
 .popup {
     position: fixed;
     top: 0;

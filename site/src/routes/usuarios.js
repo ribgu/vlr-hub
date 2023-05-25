@@ -28,4 +28,9 @@ router.post("/verificar_eDPI", function (req, res) {
     usuarioController.verificar_eDPI(req, res);
 });
 
+// rota do update do dpi
+router.put("/alterar_edpi/:fk_usuario", function (req, res) {
+    avisoController.alterar_edpi(req, res);
+});
+
 module.exports = router;

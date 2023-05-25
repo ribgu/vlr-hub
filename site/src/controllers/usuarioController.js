@@ -175,11 +175,35 @@ function verificar_eDPI(req, res) {
 
 }
 
+// controler do update
+function alterar_edpi(req, res) {
+    var dpi = req.body.dpiServer;
+    var sensi = req.body.sensiServer;
+    var eDPI = req.body.eDPIServer;
+    var fk_usuario = req.body.fkUsuarioServer;
+
+    usuarioModel.alterar_edpi(dpi, sensi, eDPI, fk_usuario)
+        .then(
+            function (resultado) {
+                res.json(resultado);
+            }
+        )
+        .catch(
+            function (erro) {
+                console.log(erro);
+                console.log("Houve um erro ao realizar o post: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+
+}
+
 module.exports = {
     entrar,
     cadastrar,
     listar,
     testar,
     cadastro_eDPI,
-    verificar_eDPI
+    verificar_eDPI,
+    alterar_edpi
 }
