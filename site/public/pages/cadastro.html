@@ -69,20 +69,19 @@
       senhaVar.indexOf("_") != 1);
 
       if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmarSenhaVar == "") {
-          mensagem_erro.innerHTML = "(TODOS OS CAMPOS ESTÃO EM BRANCO)";
+          mensagem_erro.innerHTML = "TODOS OS CAMPOS ESTÃO EM BRANCO";
           return false;
       } else if(!emailValidado){
-          mensagem_erro.innerHTML = "(EMAIL INVÁLIDO)";
-      }else if(!confirmarSenhaVar){
-          mensagem_erro.innerHTML = "(A SENHA PRECISA SER IGUAL NOS 2 CAMPOS)";
+          mensagem_erro.innerHTML = "EMAIL INVÁLIDO";
       }else if(!senhaForteValidada){
-          mensagem_erro.innerHTML = "(A SENHA PRECISA TER 8 CARACTERES E NO MÍNIMO 1 ESPECIAL)";
+          mensagem_erro.innerHTML = "A SENHA PRECISA TER 8 CARACTERES E NO MÍNIMO 1 ESPECIAL";
+      }else if(!confirmarSenhaVar){
+          mensagem_erro.innerHTML = "A SENHA PRECISA SER IGUAL NOS 2 CAMPOS";
       }
       else {
-        mensagem_erro.innerHTML = "(SUCESSO!)";
-      }
+        mensagem_erro.innerHTML = "SUCESSO!";
 
-      // Enviando o valor da nova input
+        // Enviando o valor da nova input
       fetch("/usuarios/cadastrar", {
           method: "POST",
           headers: {
@@ -106,7 +105,7 @@
 
               setTimeout(() => {
                   window.location.href = "login.html";
-              }, "2000")
+              }, "1000")
 
               limparFormulario();
           } else {
@@ -118,9 +117,11 @@
       });
 
       return false;
+        
+      }
   }
   function abrir_login(){
-        window.location.href = "cadastro.html"
+        window.location.href = "login.html"
     }
   function voltarPagina() {
       window.history.back();

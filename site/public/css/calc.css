@@ -225,4 +225,8 @@ html {
     background-color: #070912;
     border-radius: 10px;
   }
+  #myChart{
+    position: relative,
+
+  }
   

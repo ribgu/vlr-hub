@@ -1,15 +1,7 @@
 
-/*
-comandos para mysql - banco local - ambiente de desenvolvimento
-*/
-
 CREATE DATABASE vlrhub;
 
 USE vlrhub;
-
-/*
-comando para sql server - banco remoto - ambiente de produção
-*/
 
 CREATE TABLE usuario (
 	id INT PRIMARY KEY,
@@ -17,4 +9,13 @@ CREATE TABLE usuario (
 	email VARCHAR(50),
 	nickname VARCHAR(50),
 	senha VARCHAR(50)
+);
+
+CREATE TABLE eDPI (
+	id INT PRIMARY KEY,
+	sensibilidade INT,
+	dpi INT,
+	eDPI INT,
+	fk_usuario INT,
+	CONSTRAINT edpi_usuario foreign key (fk_usuario) REFERENCES usuario (id)
 );

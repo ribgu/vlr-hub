@@ -19,7 +19,7 @@ router.post("/cadastrar", function (req, res) {
 router.post("/autenticar", function (req, res) {
     usuarioController.entrar(req, res);
 });
-
+// rota do cadastro edpi
 router.post("/cadastro_eDPI", function (req, res) {
     usuarioController.cadastro_eDPI(req, res);
 })
@@ -30,7 +30,7 @@ router.post("/verificar_eDPI", function (req, res) {
 
 // rota do update do dpi
 router.put("/alterar_edpi/:fk_usuario", function (req, res) {
-    avisoController.alterar_edpi(req, res);
+    usuarioController.alterar_edpi(req, res);
 });
 
 module.exports = router;

@@ -122,8 +122,8 @@ input:focus{
 .redirecionando_login{
     font-size: 1vmax;
     align-self: center;
-    margin-top: 10%;
-    color: #ACACAC;
+    margin-top: 5%;
+    color: #4b4b4b;
 }
 .caps{
     color: #92568F;
@@ -131,7 +131,7 @@ input:focus{
     cursor: pointer;
 }
 #mensagem_erro{
-    margin-left: 2.6vw;
+    margin-left: 2vw;
     color: #92568F;
     font-size: 1vmax;
     font-weight: 800;

@@ -141,7 +141,7 @@ function cadastro_eDPI(req, res) {
 
 function verificar_eDPI(req, res) {
 
-    // Recebe as inputs aqui postas no JS da pagina de Login
+    // valida se o usuario ja tem edpi
     var fk_usuario = req.body.fkUsuarioServer;
 
     if (fk_usuario == undefined) {
