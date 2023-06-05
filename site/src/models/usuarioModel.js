@@ -53,7 +53,7 @@ function verificar_eDPI(fk_usuario) {
     return database.executar(instrucao);
 }
 
-// parei aqui
+
 function alterar_edpi(dpi, sensi, eDPI, fk_usuario) {
     console.log("ACESSEI O AVISO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function editar(): ", dpi, sensi, eDPI, fk_usuario);
     var instrucao = `
@@ -67,11 +67,22 @@ function alterar_edpi(dpi, sensi, eDPI, fk_usuario) {
     return database.executar(instrucao);
 }
 
+function pegar_dados_grafico(fk_usuario) {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function entrar(): ", fk_usuario)
+    var instrucao = `
+    SELECT eDPI, (SELECT AVG(eDPI) FROM eDPI) AS media_total FROM eDPI WHERE fk_usuario = ${fk_usuario};
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
 module.exports = {
     entrar,
     cadastrar,
     listar,
     cadastro_eDPI,
     verificar_eDPI,
-    alterar_edpi
+    alterar_edpi,
+    pegar_dados_grafico
+
 };

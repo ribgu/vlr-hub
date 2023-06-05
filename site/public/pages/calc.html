@@ -1,85 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VLR - HUB | eDPI</title>
+    <link rel="stylesheet" href="..\css\calc.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="script" href="../scripts/funcoes.js" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="../imgs/valorant-logo-transparent-free-png.webp"
+    />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VLR - HUB | eDPI</title>
-  <link rel="stylesheet" href="..\css\calc.css" />
-  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet" />
-  <link rel="script" href="../scripts/funcoes.js" />
-  <link rel="icon" type="image/png" href="../imgs/valorant-logo-transparent-free-png.webp">
-</head>
-
-<body id="body">
-  <div id="popup" class="popup">
-    <div class="popup-content">
-      <h2>FAÇA SEU LOGIN</h2>
-      <p>Para ter o acesso a essa página faça seu login</p>
-      <button id="closeBtn" onclick="abrir_login()">LOGIN</button>
-    </div>
-  </div>
-  <div class="background_calc">
-    <div class="header">
-      <div class="navbar">
-        <a class="links" href="./index.html"> HOME </a>
-        <a class="links" href="./agentes.html"> AGENTES </a>
-        <a class="links" href="./mapas.html"> MAPAS </a>
-        <a class="calc" href="./tips.html"> CALCULADORA </a>
+  <body id="body">
+    <div id="popup" class="popup">
+      <div class="popup-content">
+        <h2>FAÇA SEU LOGIN</h2>
+        <p>Para ter o acesso a essa página faça seu login</p>
+        <button id="closeBtn" onclick="abrir_login()">LOGIN</button>
       </div>
     </div>
-    <div class="container">
-      <div class="caixa">
-        <span class="titulo">eDPI ou Effectve Dots Per Inch</span>
-        <p class="texto">
-          É o termo é usado para mensurar a sua “verdadeira sensibilidade”
-          Assim você pode comparar suas configurações independentemente do
-          jogo ou do hardware. Portanto, o eDPI de dois jogadores pode ser
-          igual mesmo eles usando DPI’s e Sensibilidades diferentes.
-        </p>
+    <div class="background_calc">
+      <div class="header">
+        <div class="navbar">
+          <a class="links" href="./index.html"> HOME </a>
+          <a class="links" href="./agentes.html"> AGENTES </a>
+          <a class="links" href="./mapas.html"> MAPAS </a>
+          <a class="calc" href="./tips.html"> CALCULADORA </a>
+        </div>
+      </div>
+      <div class="container">
+        <div class="caixa">
+          <span class="titulo">eDPI ou Effectve Dots Per Inch</span>
+          <p class="texto">
+            É o termo é usado para mensurar a sua “verdadeira sensibilidade”
+            Assim você pode comparar suas configurações independentemente do
+            jogo ou do hardware. Portanto, o eDPI de dois jogadores pode ser
+            igual mesmo eles usando DPI’s e Sensibilidades diferentes.
+          </p>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="bloco_calc">
-    <div class="container_2">
-      <div class="caixa_inputs">
-        <div class="caixa_dpi">
-          <span class="titulo_calc">DPI:</span>
-          <input type="number" id="inp_dpi" />
-        </div>
-        <div class="caixa_sensi">
-          <span class="titulo_calc">SENSIBILIDADE:</span>
-          <input type="number" id="inp_sensi" />
-        </div>
-        <div class="caixa_result">
-          <div class="mostrar">
-            <span class="titulo_result">SUA eDPI é:</span>
-            <div class="caixa_edpi"><span id="resultadoEDPI"></span></div>
+    <div class="bloco_calc">
+      <div class="container_2">
+        <div class="caixa_inputs">
+          <div class="caixa_dpi">
+            <span class="titulo_calc">DPI:</span>
+            <input type="number" id="inp_dpi" />
           </div>
-          <button id="calcular" onclick="calcular_edpi()">CALCULAR</button>
-
+          <div class="caixa_sensi">
+            <span class="titulo_calc">SENSIBILIDADE:</span>
+            <input type="number" id="inp_sensi" />
+          </div>
+          <div class="caixa_result">
+            <div class="mostrar">
+              <span class="titulo_result">SUA eDPI é:</span>
+              <div class="caixa_edpi"><span id="resultadoEDPI"></span></div>
+            </div>
+            <button id="calcular" onclick="calcular_edpi()">CALCULAR</button>
+          </div>
+          <div id="bloco_alterar">
+            <span style="color: white"
+              >Você ja possui eDPI, <br />
+              deseja alterar?</span
+            >
+            <button class="alterar" onclick="alterar_edpi()">ALTERAR</button>
+          </div>
         </div>
-        <div id="bloco_alterar">
-          <span style="color:white">Você ja possui eDPI, <br> deseja alterar?</span> <button class="alterar"
-            onclick="alterar_edpi()">ALTERAR</button>
-        </div>
-      </div>
-      
-      <div>
-        <canvas id="myChart"></canvas>
-      </div>
 
-      <div class="caixa_grafico"></div>
+        <div>
+          <canvas id="myChart"></canvas>
+        </div>
+
+        <div class="caixa_grafico"></div>
+      </div>
     </div>
-  </div>
-</body>
-
+  </body>
 </html>
+<!-- script do charjs -->
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 <script>
+  const ctx = document.getElementById("myChart");
+
+  var myChart = new Chart(ctx, {
+    type: "bar",
+    data: {
+      labels: ["Seu eDPI", "Média da eDPI dos usuários"],
+      datasets: [
+        {
+          label: "Comparação eDPI",
+          data: [],
+          borderWidth: 1,
+        },
+      ],
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true,
+        },
+      },
+    },
+  });
+</script>
+
+<script>
+  
   document.addEventListener("DOMContentLoaded", function () {
     const popup = document.getElementById("popup");
     const closeBtn = document.getElementById("closeBtn");
@@ -119,12 +159,10 @@
       // validação para verificar se ja tem edpi
 
       if (resposta.status == 204) {
-
         alert("você ja tem eDPI");
-        bloco_alterar.style.display = "flex"
-        calcular.style.display = "none"
+        bloco_alterar.style.display = "flex";
+        calcular.style.display = "none";
         // aparece o botao que chama a function
-
       } else {
         // fetch para fazer insert
         fetch("/usuarios/cadastro_eDPI", {
@@ -147,7 +185,6 @@
             if (resposta.ok) {
               console.log("deu certo");
 
-
               mostrarResult.innerHTML = `${eDPIVar}`;
             } else {
               console.log("nao foi");
@@ -160,6 +197,8 @@
         return false;
       }
     });
+
+    pegar_dados_grafico();
   }
 
   // função para alterar edpi
@@ -168,32 +207,41 @@
     var sensiVar = Number(inp_sensi.value);
     var eDPIVar = dpiVar * sensiVar;
     const mostrarResult = document.getElementById("resultadoEDPI");
-          fetch(`/usuarios/alterar_edpi/${sessionStorage.getItem("ID_USUARIO")}`, {
-            method: "PUT",
-            headers: {
-              "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-              dpiServer: dpiVar,
-              sensiServer: sensiVar,
-              eDPIServer: eDPIVar,
-              fkUsuarioServer: sessionStorage.ID_USUARIO,
-            })
-          }).then(function (resposta) {
-
-            if (resposta.ok) {
-              window.alert("eDPI atualizado com sucesso pelo usuario de email: " + sessionStorage.getItem("EMAIL_USUARIO") + "!");
-              mostrarResult.innerHTML = `${eDPIVar}`;
-            } else if (resposta.status == 404) {
-              window.alert("Deu 404!");
-            } else {
-              throw ("Houve um erro ao tentar realizar a alteração! Código da resposta: " + resposta.status);
-            }
-          }).catch(function (resposta) {
-            console.log(`#ERRO: ${resposta}`);
-          });
+    fetch(`/usuarios/alterar_edpi/${sessionStorage.getItem("ID_USUARIO")}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        dpiServer: dpiVar,
+        sensiServer: sensiVar,
+        eDPIServer: eDPIVar,
+        fkUsuarioServer: sessionStorage.ID_USUARIO,
+      }),
+    })
+      .then(function (resposta) {
+        if (resposta.ok) {
+          window.alert(
+            "eDPI atualizado com sucesso pelo usuario de email: " +
+              sessionStorage.getItem("EMAIL_USUARIO") +
+              "!"
+          );
+          mostrarResult.innerHTML = `${eDPIVar}`;
+        } else if (resposta.status == 404) {
+          window.alert("Deu 404!");
+        } else {
+          throw (
+            "Houve um erro ao tentar realizar a alteração! Código da resposta: " +
+            resposta.status
+          );
         }
+      })
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+      });
 
+    pegar_dados_grafico();
+  }
 
   window.onload = function () {
     validarSessao();
@@ -201,33 +249,32 @@
   function abrir_login() {
     window.location.href = "login.html";
   }
-</script>
 
+  function pegar_dados_grafico() {
+    //ele ta caindo na model da entrar, algum parametro está errado  e estou deixando esse problema com vc gustavo do futuro
+    //eu confio em vc 
+    // fetch para fazer select do grafico
+    fetch("/usuarios/pegar_dados_grafico", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        fkUsuarioServer: sessionStorage.ID_USUARIO,
+      }),
+    }).then(function (resposta) {
+      console.log("ESTOU NO THEN DO verificareDPI!");
 
-<!-- script do charjs -->
-
-
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-<script>
-  const ctx = document.getElementById('myChart');
-
-  new Chart(ctx, {
-    type: 'bar',
-    data: {
-      labels: ['Seu eDPI', 'Média da eDPI dos usuários'],
-      datasets: [{
-        label: 'Comparação eDPI',
-        data: [1000, 800],
-        borderWidth: 1
-      }]
-    },
-    options: {
-      scales: {
-        y: {
-          beginAtZero: true
-        }
+      if (resposta.ok) {
+        console.log(resposta);
+        resposta.json().then((json) => {});
       }
-    }
-  });
+    });
+    // Adicionando o novo valor ao array data
+    myChart.data.datasets[0].data.push(json.eDPI);
+    myChart.data.datasets[0].data.push(json.media_total);
+
+    // Atualizando o gráfico
+    myChart.update();
+  }
 </script>

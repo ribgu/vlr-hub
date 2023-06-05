@@ -198,6 +198,32 @@ function alterar_edpi(req, res) {
 
 }
 
+function pegar_dados_grafico(req, res) {
+
+    // Recebe as inputs aqui postas no JS da pagina de Login
+    var fk_usuario = req.body.fkUsuarioServer;
+
+    if (fk_usuario == undefined) {
+        res.status(400).send("Seu usuario está indefinido!");
+    }else {
+        
+        usuarioModel.pegar_dados_grafico(fk_usuario)
+            .then(
+                function (resultado) {
+                    console.log(`\nResultados encontrados: ${resultado.length}`);
+                    console.log(`Resultados: ${JSON.stringify(resultado)}`); // transforma JSON em String
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log("\nHouve um erro ao realizar o select! Erro: ", erro.sqlMessage);
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+
+}
+
 module.exports = {
     entrar,
     cadastrar,
@@ -205,5 +231,6 @@ module.exports = {
     testar,
     cadastro_eDPI,
     verificar_eDPI,
-    alterar_edpi
+    alterar_edpi,
+    pegar_dados_grafico
 }

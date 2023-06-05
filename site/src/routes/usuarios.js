@@ -33,4 +33,10 @@ router.put("/alterar_edpi/:fk_usuario", function (req, res) {
     usuarioController.alterar_edpi(req, res);
 });
 
+// rota do select do dpi
+router.post("/pegar_dados_grafico", function (req, res) {
+    usuarioController.pegar_dados_grafico(req, res);
+});
+
+
 module.exports = router;
