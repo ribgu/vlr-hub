@@ -212,6 +212,7 @@ function pegar_dados_grafico(req, res) {
                 function (resultado) {
                     console.log(`\nResultados encontrados: ${resultado.length}`);
                     console.log(`Resultados: ${JSON.stringify(resultado)}`); // transforma JSON em String
+                    res.json(resultado)
                 }
             ).catch(
                 function (erro) {

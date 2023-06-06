@@ -226,7 +226,9 @@ html {
     border-radius: 10px;
   }
   #myChart{
-    position: relative,
+    position: relative;
+    width: 80%;
+    height: 50%;
 
   }
   

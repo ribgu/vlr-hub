@@ -75,7 +75,7 @@ var listaMapas = [
     texto: "Um local de pesquisas altamente confidencial partido ao meio por um experimento com Radianita malsucedido. Com opções tão divididas quanto o próprio mapa para os defensores, a escolha é sua: encare os atacantes na própria base deles ou prepare o terreno para um ataque iminente."},
 
     {nome: "BIND",
-    imagem: "../imgs/carrosel_bind q.png",
+    imagem: "../imgs/carrosel_bind.png",
     texto: "Dois pontos. Nenhuma área no meio. Você precisa escolher: direita ou esquerda? E aí, qual vai ser? Ambos os lados oferecem caminhos diretos para os atacantes, e dois teleportadores de sentido único facilitam o flanqueamento."},
 
     {nome: "BREZZE",
@@ -98,25 +98,32 @@ var listaMapas = [
     imagem: "../imgs/carrosel_split.png",
     texto: "Se quiser avançar, é preciso subir. Separados por uma área central elevada, dois pontos fornecem movimentação rápida com duas cordas ascendentes. Cada ponto tem uma torre imponente que é vital para o controle da área. E não se esqueça: mantenha os olhos abertos e focados nas áreas elevadas antes que tudo vá pelos ares."},
 ];
+
+var posicao = 0;
+
 function avancar() {
-
-if (posicao < listaMapas.length){
-    posicao++
-    titulo_mapa.innerHTML = listaMapas[posicao].nome
-    texto_mapa.innerHTML = listaMapas[posicao].texto
-    carrosel.style.backgroundImage = `url(${listaMapas[posicao].imagem})`;
-
-}
+  posicao++;
+  if (posicao >= listaMapas.length) {
+    posicao = 0;
+  }
+  exibirMapa();
 }
 
 function voltar() {
-if (posicao <= listaMapas.length){
-    posicao--
-    titulo_mapa.innerHTML = listaMapas[posicao].nome
-    texto_mapa.innerHTML = listaMapas[posicao].texto
-    carrosel.style.backgroundImage = `url(${listaMapas[posicao].imagem})`;
+  posicao--;
+  if (posicao < 0) {
+    posicao = listaMapas.length - 1;
+  }
+  exibirMapa();
 }
+
+function exibirMapa() {
+  titulo_mapa.innerHTML = listaMapas[posicao].nome;
+  texto_mapa.innerHTML = listaMapas[posicao].texto;
+  carrosel.style.backgroundImage = `url(${listaMapas[posicao].imagem})`;
 }
+
+
 function irParaOFim() {
       window.scrollTo(0, document.body.scrollHeight);
     }

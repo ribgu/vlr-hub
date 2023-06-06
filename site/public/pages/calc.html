@@ -94,32 +94,85 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script>
-  const ctx = document.getElementById("myChart");
+  var dados = []
+  const labels_linha = [
+    'eDPI',
+    'MÉDIA eDPI DOS USUÁRIOS'
+];
 
-  var myChart = new Chart(ctx, {
-    type: "bar",
-    data: {
-      labels: ["Seu eDPI", "Média da eDPI dos usuários"],
-      datasets: [
-        {
-          label: "Comparação eDPI",
-          data: [],
-          borderWidth: 1,
-        },
-      ],
-    },
+
+const grafico = document.getElementById('myChart');
+
+const data = {
+    labels: labels_linha,
+    datasets: [{
+        label: 'eDPI',
+        data: dados,
+        backgroundColor: '#2F3345',
+        borderColor: '#2F3345',
+        borderWidth: 2
+    }
+    ]
+};
+
+const config = {
+    type: 'bar',
+    data: data,
     options: {
-      scales: {
-        y: {
-          beginAtZero: true,
+        maintainAspectRatio: false,
+
+        scales: {
+            y: {
+                ticks: {
+                    beginAtZero: true,
+                    color: 'white',
+                    font: {
+                        size: 18,
+                        family: 'Montserrat Ace',
+                        weight: 500
+                    }
+                },
+            },
+            x: {
+                ticks: {
+                    color: 'white',
+                    font: {
+                        size: 18,
+                        family: 'Montserrat Ace',
+                        weight: 500
+                    }
+                }
+            }
         },
-      },
-    },
-  });
+        plugins: {
+            title: {
+                display: true,
+                text: 'COMPARAÇÃO eDPI',
+                color: 'white',
+                font: {
+                    size: 18,
+
+                    family: 'Montserrat Ace',
+                    weight: 800
+                }
+              },  legend: {
+                labels: {
+                    color:'white',
+                    font: {
+                        size: 18,
+                        family: 'Montserrat Ace',
+                        weight: 500
+                    }
+                }
+            }
+        }
+    }
+};
+
+const grafico_eDPI = new Chart(grafico, config);
 </script>
 
 <script>
-  
   document.addEventListener("DOMContentLoaded", function () {
     const popup = document.getElementById("popup");
     const closeBtn = document.getElementById("closeBtn");
@@ -252,7 +305,7 @@
 
   function pegar_dados_grafico() {
     //ele ta caindo na model da entrar, algum parametro está errado  e estou deixando esse problema com vc gustavo do futuro
-    //eu confio em vc 
+    //eu confio em vc
     // fetch para fazer select do grafico
     fetch("/usuarios/pegar_dados_grafico", {
       method: "POST",
@@ -267,14 +320,18 @@
 
       if (resposta.ok) {
         console.log(resposta);
-        resposta.json().then((json) => {});
+        resposta.json().then((json) => {
+          // Adicionando o novo valor ao array data
+          console.log(json[0].eDPI)
+          dados[0] = json[0].eDPI
+          dados[1] = json[0].media_total
+
+          // // Atualizando o gráfico
+          grafico_eDPI.update()
+
+
+        });
       }
     });
-    // Adicionando o novo valor ao array data
-    myChart.data.datasets[0].data.push(json.eDPI);
-    myChart.data.datasets[0].data.push(json.media_total);
-
-    // Atualizando o gráfico
-    myChart.update();
   }
 </script>
