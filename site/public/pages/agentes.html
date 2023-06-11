@@ -22,8 +22,14 @@
         <a class="links" href="./index.html"> HOME </a>
         <a class="guia_agentes" href="./agentes.html"> AGENTES </a>
         <a class="links" href="./mapas.html"> MAPAS </a>
-        <a class="links" href="./tips.html"> CALCULADORA </a>
+        <a class="links" href="./calc.html"> CALC. eDPI </a>
       </div>
+      <button class="sair" id="botao_sair" onclick="limparSessao()">
+        SAIR
+      </button>
+      <button class="login" id="botao_login" onclick="abrir_login()">
+        ENTRAR
+      </button>
     </div>
     <div class="container">
       <span class="titulo_introducao">CONHEÇA OS AGENTES DE VALORANT:</span>
@@ -205,5 +211,29 @@
      function abrir_chamber(){
       window.location.href = "./agentes/chamber.html"
      }
+
+     function abrir_login() {
+    window.location.href = "login.html";
+  }
+
+  function validarSessao() {
+  var email = sessionStorage.getItem('EMAIL_USUARIO');
+  var nome = sessionStorage.getItem('NOME_USUARIO');
+
+  const botao_login = document.getElementById("botao_login");
+
+  if (email != null && nome != null) {
+    botao_login.style.display = "none";
+  }
+}
+
+    window.onload = function() {
+      validarSessao();
+    };
+
+    function limparSessao() {
+    sessionStorage.clear();
+    window.location.reload(true);
+}
 
 </script> 

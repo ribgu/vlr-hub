@@ -48,8 +48,8 @@ html {
     font-weight: 400;
     
 }
-.home {
-    border-bottom: 2px solid #FF4655;
+.mapas {
+    border-bottom: 2px solid darkblue;
     font-weight: 800;
     text-decoration: none;
     color: white;
@@ -75,6 +75,32 @@ html {
     height: 30%;
     margin-top: 10%;
     margin-left: 5%;
+}
+.login{
+  margin-left: 80%;
+  position: absolute;
+  background-color:#FF4655;
+  color: white;
+  box-shadow: 0 0 0 0 rgba(0,0,0,0),0 0 0 0 rgba(0,0,0,0) !important;
+  border-bottom: 0px;
+  border:none!important;
+  width: 7vw;
+  height: 4vh;
+  font-size: large;
+  border-radius: 6%;
+}
+.sair{
+  margin-left: 80%;
+  position: absolute;
+  background-color:#FF4655;
+  color: white;
+  box-shadow: 0 0 0 0 rgba(0,0,0,0),0 0 0 0 rgba(0,0,0,0) !important;
+  border-bottom: 0px;
+  border:none!important;
+  width: 7vw;
+  height: 4vh;
+  font-size: large;
+  border-radius: 6%;
 }
 .titulo{
     font-weight: 800;

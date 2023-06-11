@@ -184,6 +184,32 @@ html {
     display: none;
     
 }
+.login{
+    margin-left: 80%;
+    position: absolute;
+    background-color:#FF4655;
+    color: white;
+    box-shadow: 0 0 0 0 rgba(0,0,0,0),0 0 0 0 rgba(0,0,0,0) !important;
+    border-bottom: 0px;
+    border:none!important;
+    width: 7vw;
+    height: 4vh;
+    font-size: large;
+    border-radius: 6%;
+}
+.sair{
+    margin-left: 80%;
+    position: absolute;
+    background-color:#FF4655;
+    color: white;
+    box-shadow: 0 0 0 0 rgba(0,0,0,0),0 0 0 0 rgba(0,0,0,0) !important;
+    border-bottom: 0px;
+    border:none!important;
+    width: 7vw;
+    height: 4vh;
+    font-size: large;
+    border-radius: 6%;
+}
 .alterar{
     width: 12vw;
     height: 10vh;

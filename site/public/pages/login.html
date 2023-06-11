@@ -31,10 +31,11 @@
         <span class="texto_bemvindo">Faça login na sua conta e aproveite o melhor do <span class="valorant"> VALORANT </span></span>
         <input type="email" id="inp_email" class="input" placeholder="EMAIL">
         <input type="password" id="inp_senha" class="input2" placeholder="SENHA">
+        <span id="erro"></span>
         </div>
         <span id="alerta"></span>
         <button class="logar"><span class="material-symbols-outlined" id="arrow_login" onclick="entrar()">arrow_right_alt</span></button>
-        <span class="cadastrar">Não tem conta ainda? <span class="caps" onclick="abrir_cadastro()"> CADASTRE - SE </span> </span>
+        <span class="cadastrar">Não tem conta ainda? <span class="caps" onclick="abrir_cadastro()"> CADASTRE-SE </span> </span>
       </div>
     </div>
   </body>
@@ -87,6 +88,7 @@
             } else {
 
                 console.log("Houve um erro ao tentar realizar o login!");
+                erro.innerHTML = `Usuário ou senha inválida`
 
                 resposta.text().then(texto => {
                     console.error(texto);

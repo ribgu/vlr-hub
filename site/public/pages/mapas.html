@@ -15,16 +15,21 @@
     <link rel="icon" type="image/png" href="../imgs/valorant-logo-transparent-free-png.webp">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 </head>
-<body>
+<body onload="avancar_auto()">
     <div class="background_mapas">
         <div class="header">
             <div class="navbar">
-                <a class="home" href="./index.html"> HOME </a>
+                <a class="links" href="./index.html"> HOME </a>
                 <a class="links" href="./agentes.html"> AGENTES </a>
-                <a class="links" href="./mapas.html"> MAPAS </a>
-                <a class="links" href="./calc.html"> CALCULADORA </a>
+                <a class="mapas" href="./mapas.html"> MAPAS </a>
+                <a class="links" href="./calc.html"> CALC. eDPI </a>
             </div>
-            <button class="login" onclick="abrir_login()">ENTRAR</button>
+            <button class="sair" id="botao_sair" onclick="limparSessao()">
+              SAIR
+            </button>
+            <button class="login" id="botao_login" onclick="abrir_login()">
+              ENTRAR
+            </button>
         </div>
         <div class="container">
             <div class="caixa">
@@ -33,6 +38,8 @@
                     Mapas em jogos online, como Valorant, são ambientes virtuais com layouts específicos e
                     estruturas projetados para partidas. Conhecer os mapas é crucial para tomar decisões táticas,
                     comunicar-se com a equipe e obter vantagens estratégicas.
+                  
+
                 </p>
             </div>
         </div>
@@ -59,6 +66,29 @@
 </body>
 </html>
 <script>
+  function abrir_login() {
+    window.location.href = "login.html";
+  }
+
+  function validarSessao() {
+  var email = sessionStorage.getItem('EMAIL_USUARIO');
+  var nome = sessionStorage.getItem('NOME_USUARIO');
+
+  const botao_login = document.getElementById("botao_login");
+
+  if (email != null && nome != null) {
+    botao_login.style.display = "none";
+  }
+}
+
+    window.onload = function() {
+      validarSessao();
+    };
+
+    function limparSessao() {
+    sessionStorage.clear();
+    window.location.reload(true);
+}
     const titulo_mapa = document.getElementById("titulo_mapa");
     const texto_mapa = document.getElementById("texto_mapa");
     const carrosel = document.getElementById("carrosel");
@@ -126,7 +156,23 @@ function exibirMapa() {
 
 function irParaOFim() {
       window.scrollTo(0, document.body.scrollHeight);
-    }
+}
+  
+
+
+// a função avancar_auto() utiliza um loop for para executar a função avancar() 10 vezes. 
+// Após cada chamada da função, há um atraso de 5 segundos antes de rodar novamente. 
+
+  async function avancar_auto(){
+  
+  for (let i = 0; i < 10; i++) {
+    avancar();
+    console.log("avançou, agora vai esperar")
+    await new Promise(resolve => setTimeout(resolve, 5000));
+    console.log("prontinhho, reiniciando código")
+  }
+  
+}
 
 
     
